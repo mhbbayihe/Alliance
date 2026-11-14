@@ -1,0 +1,294 @@
+TRADUCTIONS ÉTON — COPIE DU CAHIER, À VÉRIFIER
+Copié le 14 novembre 2026 d'après les 7 photos du cahier.
+Rien n'est encore mis dans l'extension : corrigez ce fichier d'abord.
+
+Comment corriger : modifiez directement la ligne « Éton : ».
+Les lignes marquées [?] sont celles où j'ai hésité en lisant ; la raison est
+donnée à la fin du fichier, par numéro.
+Les mots barrés dans le cahier ne sont pas recopiés.
+
+============================================================
+A. Éléments présents sur tous les écrans
+============================================================
+
+1. Français : Solde
+   Éton : tàŋ i mɔ̀ní
+
+2. Français : Frais
+   Éton : tàŋ
+
+3. Français : Bénéficiaire
+   Éton : nɔ̀ŋ mɔ̀ní
+
+4. Français : Récapitulatif
+   Éton : bɔ̀ lɔm bə̀ə̀ə̀
+
+5. Français : Confirmation (dernière étape : le transfert est confirmé)
+   Éton : lɔ̀mní o kàbá
+
+6. Français : Banque en ligne
+   Éton : bàŋ
+
+7. Français : Environnement de test — données fictives, aucune transaction réelle.
+   Éton : lɛtní otil – lɔ̀m ɛsətǒ – lɔ̀mníosətǒ
+
+8. Français : Protocole de test
+   Éton : ŋtakní otil
+
+9. Français : Retour au hackathon
+   Éton : timní a hackathon
+
+10. Français : Sécurité
+    Éton : màkləgán
+
+11. Français : Vérifiez toujours le nom et le numéro du bénéficiaire avant de confirmer un transfert.
+    Éton : mìní tàlgí dué ɛ numba kual a ǹnɔ̀ŋ mɔní osusua nǎ wɛ lɔm
+
+12. Français : Connexion sécurisée
+    Éton : mɔpə a nə amakla
+
+13. Français : Environnement de démonstration. Ne saisissez aucune donnée personnelle réelle.
+    Éton : lɛtní ɛpoló. bə̀ tíl dam ɛ̀tə tə̌l wɔ mɛn
+
+============================================================
+B. Écran 1 — Solde et compte
+============================================================
+
+14. Français : Compte courant
+    Éton : cɔntə itə lɔ̀t
+
+15. Français : Solde disponible
+    Éton : tàŋ i mɔ̀ní ìnə
+
+16. Français : Votre compte
+    Éton : cɔntə wɔ
+
+17. Français : Consultez votre solde et lancez un transfert en toute sécurité.
+    Éton : talgàn tàŋ i mɔní, lɔmgàn ɛ makləgàna
+
+18. Français : Effectuer un transfert
+    Éton : lɔ̀mní mɔ̀ní
+
+19. Français : Consulter les frais
+    Éton : tàl tàŋ
+
+20. Français : Transactions récentes
+    Éton : milɔ́mnì mi tə̀tə́gə̀
+
+21. Français : Paiement marchand
+    Éton : oŋpfús 
+
+22. Français : Salaire reçu
+    Éton : makní mə kàbá
+
+23. Français : Transfert reçu
+    Éton : lɔmní onɔŋbàn
+
+24. Français : Facture électricité
+    Éton : ɛ̀pə́p ɛ ŋ̀pìá 
+
+25. Français : Bonjour, Amina
+    Éton : mə̀ma kìrí Amina
+
+26. Français : Numéro de compte : CM 001 2345 6789 01
+    Éton : nɔ̀mbá a cɔntə
+
+============================================================
+C. Écran 2 — Frais de transfert
+============================================================
+
+27. Français : Frais de transfert
+    Éton : tàŋ i lɔ̀mní
+
+28. Français : Choisissez le type de transfert et le montant. Les frais sont calculés automatiquement.
+    Éton : tɔ̀p kàn i lɔ̀mní ɛ̌ dɔ̀lɔ́. tàŋ yɛ̄ kɔ́mnì
+
+29. Français : Type d'opération
+    Éton : kàn i lɔ̀mní
+
+30. Français : Montant à envoyer
+    Éton : dɔ̀lɔ́ dɛ̌ lɔ̀mbán
+
+31. Français : Gratuit
+    Éton : dzə̀zə̀
+
+32. Français : Total à débiter
+    Éton : tàŋ bɛ̌ vàhá
+
+33. Français : Solde après opération
+    Éton : tàŋ i mɔ̀ní a mbùs i lɔmní
+
+34. Français : Continuer
+    Éton : kɛ̀ní òsú
+
+35. Français : Retour
+    Éton : dìmní
+
+36. Français : Compte Safinum
+    Éton : cɔ̀ntə̀ Safinum
+
+37. Français : Mobile Money
+    Éton : Mobile money
+
+38. Français : Autre banque
+    Éton : bàŋ pəbə́
+
+39. Français : Transfert instantané et gratuit
+    Éton : lɔ̀mní tətəgə ɛ zəzə̀
+
+40. Français : Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA)
+    Éton : tàŋ i 1,5 % (àsí 100 FCFA, adɔp 2 500 FCFA)
+
+============================================================
+D. Écran 3 — Bénéficiaire
+============================================================
+
+41. Français : Renseignez les informations du destinataire. Vérifiez toujours le numéro avant de valider.
+    Éton : bɔlɔ ìlɔ́m ɛ̀tə́ tal ǹnɔ̀ŋ mɔ̀ní. ɔ̀talgí nɔ̀mbá osusu nǎ wɛ dzə̀lbə̀   [?]
+
+42. Français : Nom du bénéficiaire
+    Éton : dué ɛ ǹnɔ̀ŋ mɔ̀ní
+
+43. Français : Numéro de téléphone
+    Éton : nɔmba à kual
+
+44. Français : Motif du transfert
+    Éton : òsu dzə òtə́ lɔ̀m
+
+45. Français : Note (optionnel)
+    Éton : tìl əñíni wɔ̀
+
+46. Français : J'ai vérifié le nom et le numéro du bénéficiaire.
+    Éton : mə tǎl dué ɛ nɔmba á ǹnɔ́ŋ mɔ̀ní
+
+47. Français : Ce bénéficiaire n'a jamais été utilisé sur ce compte. Vérifiez le numéro avant de continuer.
+    Éton : ǹnɔ̀ŋ mɔní nyɔ́ à gɛ̀ntə gbɛ̀ni ì cɔntə̀ nyí. tǎl nɔmba kual osusu nǎ wɛ̀ kə osú   [?]
+
+============================================================
+E. Écran 4 — Récapitulatif avant confirmation
+============================================================
+
+48. Français : Vérifiez les informations avant de confirmer le transfert.
+    Éton : tǎl ìlɔ́m osusu nǎ wɛ̀ dzəblə lɔmní
+
+49. Français : Montant
+    Éton : dɔ̀lɔ́
+
+50. Français : Total débité
+    Éton : tàŋ bə̀ vàhá
+
+51. Français : Téléphone
+    Éton : telefon / ŋ̀kual lɔŋní
+
+52. Français : Référence
+    Éton : ìpə́
+
+53. Français : Opération (type de transfert choisi)
+    Éton : kàn i tɔpní i lɔmní
+
+54. Français : Je confirme que les informations ci-dessus sont correctes.
+    Éton : mə tə dzəlbə ìlɔ́m á dɔ̀p tǐ
+
+55. Français : Confirmer le transfert
+    Éton : dzəlbə lɔmní
+
+56. Français : Modifier
+    Éton : tsɛ̀ní
+
+============================================================
+F. Écran 5 — Reçu
+============================================================
+
+57. Français : Transfert effectué
+    Éton : lɔmní o kɔbàn
+
+58. Français : Votre transfert a été envoyé avec succès.
+    Éton : lɔmní wɔ̀ ó kə ɛ̀ŋkábə̀
+
+59. Français : Statut (l'état du transfert : réussi ou non)
+    Éton : ítə̀
+
+60. Français : Succès
+    Éton : ŋ̀kabà
+
+61. Français : Nouveau transfert
+    Éton : gbamgí lɔmní
+
+============================================================
+G. Messages d'erreur et alertes de sécurité
+============================================================
+
+62. Français : Message important
+    Éton : màŋra oŋpí
+
+63. Français : Une erreur est survenue
+    Éton : ivús i kɔ́m
+
+64. Français : Alerte de sécurité
+    Éton : okalá !
+
+65. Français : Fermer (bouton pour fermer un message)
+    Éton : pɛ̀t
+
+66. Français : Le montant doit être supérieur à zéro.
+    Éton : dɔ̀lɔ́ ɛbəlá na ɛlɔrgə ɛ zəzə́
+
+67. Français : Solde insuffisant pour effectuer ce transfert.
+    Éton : tàŋ i mɔ̀ní isə àbuyə́ asu lɔmní
+
+68. Français : Veuillez renseigner le nom et le numéro du bénéficiaire.
+    Éton : bɔ́lɔ̀ dué ɛ nɔmba kual ɛ nɔŋ mɔ́ní
+
+69. Français : Alerte de sécurité : vérifiez le numéro du bénéficiaire avant de continuer.
+    Éton : okalá ! tál nɔmba a ǹnɔ́ŋ mɔni osusu nǎ wɛ̀ kə òsú
+
+70. Français : Alerte de sécurité : ce bénéficiaire n'a jamais été utilisé sur ce compte.
+    Éton : okalá ! nɔ̀ŋ mɔ́nì nyɔ́ ǎ gɛ̀ntə gbɛ̀ní ì cɔ̀ntə nyí
+
+71. Français : Erreur réseau : le service est temporairement indisponible. Réessayez.
+    Éton : ivús i reso : dam ɛsə lɔt ìtətə́g nyɔ́. bakbə̀ vɔ́k
+
+72. Français : Vous devez confirmer les informations avant de valider le transfert.
+    Éton : mini bələ dzəlbə ìlɔ́m osusu nǎ mìnɛ̌ lɔ́m
+
+============================================================
+LIGNES OÙ J'AI HÉSITÉ
+============================================================
+
+Partout : les accents (tons) sont petits sur les photos. Je les ai recopiés
+quand je les voyais ; il peut en manquer ou y en avoir un de travers.
+Le mot « argent » est écrit tantôt mɔ̀ní, mɔní, mɔ̀ni, mɔ́ní selon les lignes :
+je l'ai laissé comme sur le cahier. Même chose pour lɔ̀mní / lɔmní,
+nɔ̀mbá / nɔmba / numba, cɔntə / cɔ̀ntə̀, òsú / osú.
+
+ 3. Première lettre retouchée dans le cahier : ǹnɔ̀ŋ ou ŋ̀nɔ̀ŋ ?
+ 4. Dernier mot : bə̀ə̀ə̀ (trois ə) ou bə̀ə̀ ? Accents incertains.
+ 5. Premier mot : lɔ̀mní ou bɔ̀mní ? Puis « o kàbá » ou « ó kàbá ».
+ 7. « ɛsə tǒ » et « osə tǒ » : en un mot ou en deux ? Premier mot lɛtní ou lɛt ní ?
+ 8. Début du mot après la rature : ŋtakní ou ntakní ?
+11. « osusua » (ici avec un a) alors que les autres lignes ont « osusu » ;
+    « numba » ici, « nɔmba » ailleurs.
+12. Après la rature : « a nə amakla » ou « a nə aməkla » ?
+13. Début réécrit après une rature : « lɛtní ɛpoló » ; fin : « wɔ mɛn ».
+21. Un signe est barré au milieu du mot : oŋpfús, ou « o ŋ̀pfús », ou ŋ̀fús ?
+22. Dernier mot taché : kàbá ou bàbá ?
+24. ɛ̀pə́p ɛ ŋ̀pìá : le ŋ porte un trait ; est-ce ŋ̀pìá ou m̀pìá ?
+28. Signe barré avant « ɛ̌ dɔ̀lɔ́ » ; « tàŋ yɛ̄ kɔ́mnì » : deux points avant yɛ̄ ?
+31. Début retouché : dzə̀zə̀ ici, mais « zəzə » aux lignes 39 et 66.
+38. Second mot : pəbə́ ou pə̀bə́ ?
+39. Dernier mot : zəzə̀ ou zəzə́ ?
+41. Ligne très raturée. Le mot « bɔlɔ » est écrit au début de la 2e ligne avec
+    un crochet : je l'ai placé en tête de phrase. À vérifier en entier.
+45. Deuxième mot : əñíni ?
+47. Le mot « mɔní » est ajouté sous la ligne ; lettre barrée avant « gɛ̀ntə ».
+48. « dzəblə » ici, « dzəlbə » aux lignes 54, 55 et 72 : lequel est le bon ?
+51. Deux propositions séparées par un trait : « telefon » ou « ŋ̀kual lɔŋní ».
+    Laquelle garder ?
+54. Dernier mot illisible pour moi : tǐ ? tɨ̌ ?
+57. « o kɔbàn » ou « okɔbàn » ? (ligne 5 : « o kàbá »)
+58. Fin de phrase : « ó kə ɛ̀ŋkábə̀ » ?
+60. ŋ̀kabà ou ŋ̀kabə̀ ?
+62. Lettres barrées au milieu : « màŋra oŋpí » ?
+66. Avant-dernier groupe : « ɛ zəzə́ » ou « ɛ̀zə̀zə́ » ?
+67. « isə àbuyə́ » : voyelle finale ə ou ɔ ?
+71. Une partie est barrée puis réécrite ; « bakbə̀ vɔ́k » en un ou deux mots ?

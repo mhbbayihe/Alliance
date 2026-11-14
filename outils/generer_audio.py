@@ -18,6 +18,7 @@ FORMATS = (".aac", ".ogg", ".mp3", ".m4a", ".opus", ".wav")
 
 LANGUES = {
     "basaa": "Enregistrements bàsàa du locuteur",
+    "eton": "Enregistrements éton du locuteur",
 }
 
 # Phrases dont l'enregistrement n'est pas joué tant qu'il n'a pas été écouté et confirmé.

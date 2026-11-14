@@ -19,8 +19,11 @@ Après une modification des fichiers, cliquer sur « Recharger » dans la page d
 | Français | `locales/fr.json` | textes exacts de la page |
 | English | `locales/en.json` | textes exacts de la page |
 | Bàsàa | `locales/basaa.json` | traductions du locuteur (`bassa.txt`, 14 novembre 2026) |
+| Éton | `locales/eton.json` | traductions du locuteur, copiées de son cahier (`liste-traduction-eton.txt`, 14 novembre 2026) |
 
 Le bàsàa reprend les 72 traductions du locuteur, lues dans `bassa.txt` à la racine du projet. Seules retouches : le nom « Safinum Pay » rétabli (écrit « Safinum pay »), et, dans la description des frais, les chiffres recopiés depuis la page (le locuteur avait écrit « 15% » pour « 1,5 % »).
+
+L'éton reprend les 72 lignes « Éton : » de `liste-traduction-eton.txt`, copie du cahier du locuteur ; les lignes où la copie est incertaine sont listées à la fin de ce fichier et restent à faire relire. Retouches : « Safinum Pay — » remis devant la phrase 13, prénom, numéro de compte et chiffres des frais recopiés depuis la page, « Mobile Money » écrit comme sur la page, et « telefon » gardé pour « Téléphone » (le cahier propose aussi « ŋ̀kual lɔŋní »).
 
 
 ## Comment ça marche
@@ -35,11 +38,13 @@ Le bàsàa reprend les 72 traductions du locuteur, lues dans `bassa.txt` à la r
 
 Une valeur écrite `{nom}` dans un fichier de langue marque une variable, par exemple `"Bonjour, {prenom}"` ou `"Frais de {taux} % (min. {min} FCFA, max. {max} FCFA)"`. Le texte autour est traduit ; la valeur est recopiée à l'identique. La forme autorisée de chaque variable est définie dans `locales/index.json`.
 
-### Écoute en bàsàa
+### Écoute en bàsàa et en éton
 
 Les enregistrements du locuteur sont dans `audio/basaa/`, nommés « numéro - phrase française » ; les numéros sont ceux des 72 phrases de `liste-traduction-basaa.txt`. Un fichier déposé sous le seul nom « numéro.ext » est renommé par le script. `audio/basaa.json` associe chaque clé de l'interface à son fichier ; il est produit par `python outils/generer_audio.py`, à relancer après tout ajout ou renommage d'enregistrement. Quand plusieurs prises existent, celle dont le nom ne porte pas « (prise N) » est jouée. Deux enregistrements sont écartés de la lecture dans ce script (`A_VERIFIER`) : « Bonjour, Amina », reçu sans son, et la description des frais, à vérifier à l'écoute.
 
-En bàsàa, un bouton haut-parleur apparaît à côté du texte survolé ou atteint au clavier s'il a un enregistrement ; un appui lance l'écoute, un second l'arrête. Le bouton est dessiné hors du contenu de la page. Un enregistrement qui prononce une valeur (le numéro de compte) n'est proposé que si la page affiche exactement cette valeur.
+L'éton suit le même principe dans `audio/eton/` et `audio/eton.json`. Le locuteur a enregistré les phrases 1 à 49 ; les phrases 50 à 72 (fin du récapitulatif, reçu, messages d'erreur et alertes) s'affichent en éton mais n'ont pas d'écoute.
+
+En bàsàa et en éton, un bouton haut-parleur apparaît à côté du texte survolé ou atteint au clavier s'il a un enregistrement ; un appui lance l'écoute, un second l'arrête. Le bouton est dessiné hors du contenu de la page. Un enregistrement qui prononce une valeur (le numéro de compte) n'est proposé que si la page affiche exactement cette valeur.
 
 Le panneau propose aussi « Lire toute la page » : les enregistrements des textes de l'écran s'enchaînent dans l'ordre de la page, un cadre suit le texte en cours de lecture, et la page défile si besoin. Un second appui ou la touche Échap arrête la lecture. Les valeurs (montants, noms, numéros) n'ont pas d'enregistrement et ne sont pas lues. Le bouton n'apparaît que pour une langue qui a des enregistrements.
 
@@ -57,7 +62,7 @@ Montants, devise, noms, numéros de compte et de téléphone, références, date
 
 Modifier la valeur dans le fichier de la langue, sans changer la clé. Pour ajouter un texte, ajouter la même clé dans tous les fichiers de langue. Pour ajouter une langue, créer son fichier et l'inscrire dans `locales/index.json`.
 
-Les fichiers actuels sont produits par `outils/generer_locales.py` ; relancer ce script écrase les modifications faites à la main. Pour corriger le bàsàa, modifier `bassa.txt` puis relancer le script.
+Les fichiers actuels sont produits par `outils/generer_locales.py` ; relancer ce script écrase les modifications faites à la main. Pour corriger le bàsàa, modifier `bassa.txt` ; pour l'éton, les lignes « Éton : » de `liste-traduction-eton.txt` ; puis relancer le script.
 
 ## Vérification
 

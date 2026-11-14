@@ -11,7 +11,7 @@ const profile = process.argv[3] || fs.mkdtempSync(path.join(os.tmpdir(), "allian
 const shot = process.argv[4];
 const ext = path.join(__dirname, "..", "extension");
 const read = (name) => JSON.parse(fs.readFileSync(path.join(ext, "locales", name), "utf8"));
-const L = { fr: read("fr.json"), en: read("en.json"), basaa: read("basaa.json") };
+const L = { fr: read("fr.json"), en: read("en.json"), basaa: read("basaa.json"), eton: read("eton.json") };
 const PORT = 9337;
 const URL_TEST = "https://safinum.cm/hackathon-test";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -84,7 +84,7 @@ const check = (label, ok, detail = "") => {
     check("page d'origine en français", original.includes(L.fr.availableBalance));
 
     // 1. Changement de langue immédiat, dans toutes les langues, valeurs intactes.
-    for (const [name, code] of [["Bàsàa", "basaa"], ["English", "en"], ["Français", "fr"]]) {
+    for (const [name, code] of [["Bàsàa", "basaa"], ["Éton", "eton"], ["English", "en"], ["Français", "fr"]]) {
       await pick(name);
       const text = await page();
       const expected = [L[code].availableBalance, L[code].overviewSubtitle, L[code].hello.replace("{prenom}", "Amina"),
@@ -113,6 +113,11 @@ const check = (label, ok, detail = "") => {
       const etat = s.dataset.etat; s.click(); return etat;
     })()`);
     const speakerSetting = () => run(`document.querySelector("#alliance-host").shadowRoot.querySelector(".speaker").dataset.reglage || ""`);
+    // Éton : les phrases 1 à 49 ont un enregistrement, les suivantes n'en ont pas.
+    await pick("Éton");
+    const etonState = await speakerState(L.eton.availableBalance);
+    check("audio éton : lecture d'un texte enregistré", etonState === "lecture", etonState);
+    await pick("Bàsàa");
     const audioState = await speakerState(B.availableBalance);
     check("audio bàsàa : lecture d'un texte enregistré (ogg)", audioState === "lecture", audioState);
     const setting = await speakerSetting();

@@ -73,7 +73,7 @@
     }
     button:focus-visible { outline: 3px solid #fcd116; outline-offset: 3px; box-shadow: 0 0 0 3px #1c1410; }
     .panel {
-      position: fixed; left: 20px; bottom: 74px; width: min(320px, calc(100vw - 40px));
+      position: fixed; left: 20px; bottom: 82px; width: min(320px, calc(100vw - 40px));
       max-height: min(76vh, 620px); overflow: auto;
       border: 2px solid #1c1410; border-radius: 12px; padding: 0 0 14px;
       background: #fffdf5; color: #1c1410; box-shadow: 0 10px 34px #0006;
@@ -85,7 +85,12 @@
       background: linear-gradient(90deg, #007a5e 0 33.34%, #ce1126 33.34% 66.67%, #fcd116 66.67%) top / 100% 5px no-repeat, #1c1410;
       color: #fff;
     }
-    h2 { margin: 0; font: 700 16px/1.25 system-ui, sans-serif; letter-spacing: .01em; }
+    /* Le nom du projet d'abord, en grand ; l'action en dessous. */
+    .head .star { width: 22px; height: 22px; }
+    h2 { margin: 0; font: 800 22px/1.1 system-ui, sans-serif; letter-spacing: .02em; }
+    .head p { margin: 3px 0 0; font: 400 13px/1.3 system-ui, sans-serif; color: #fcd116; }
+    .brand { display: block; font: 800 15px/1.15 system-ui, sans-serif; letter-spacing: .02em; }
+    .current { display: block; margin-top: 2px; font: 400 12px/1.2 system-ui, sans-serif; color: #fcd116; text-align: left; }
     /* frise de losanges jaunes à cœur rouge */
     .frieze {
       height: 14px; background-color: #1c1410; background-size: 14px 14px;
@@ -148,8 +153,14 @@
   launcher.setAttribute("aria-expanded", "false");
   launcher.setAttribute("aria-controls", "alliance-panel");
   const star = () => { const mark = document.createElement("span"); mark.className = "star"; mark.setAttribute("aria-hidden", "true"); return mark; };
+  const launcherText = document.createElement("span");
+  const brand = document.createElement("span");
+  brand.className = "brand";
+  brand.textContent = "Alliance";
   const launcherLabel = document.createElement("span");
-  launcher.append(star(), launcherLabel);
+  launcherLabel.className = "current";
+  launcherText.append(brand, launcherLabel);
+  launcher.append(star(), launcherText);
 
   const panel = document.createElement("section");
   panel.className = "panel";
@@ -161,8 +172,12 @@
   head.className = "head";
   const title = document.createElement("h2");
   title.id = "alliance-title";
-  title.textContent = "Choisir la langue";
-  head.append(star(), title);
+  title.textContent = "Alliance";
+  const subtitle = document.createElement("p");
+  subtitle.textContent = "Choisir la langue de la page";
+  const headText = document.createElement("div");
+  headText.append(title, subtitle);
+  head.append(star(), headText);
   const frieze = document.createElement("div");
   frieze.className = "frieze";
   frieze.setAttribute("aria-hidden", "true");

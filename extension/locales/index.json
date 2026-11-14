@@ -26,6 +26,13 @@
       "fichier": "basaa.json",
       "audio": "audio/basaa.json",
       "statut": "Traductions fournies par le locuteur bàsàa le 14 novembre 2026."
+    },
+    {
+      "code": "eton",
+      "nom": "Éton",
+      "fichier": "eton.json",
+      "audio": "audio/eton.json",
+      "statut": "Traductions du locuteur éton, copiées de son cahier le 14 novembre 2026."
     }
   ],
   "variables": {
