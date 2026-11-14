@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "description": "Liste des langues et règles de correspondance. Chaque langue est un fichier clé → texte ; toutes les langues ont exactement les mêmes clés. Une valeur null signifie : pas encore d'équivalent, le texte de la page n'est pas remplacé.",
+  "languesSource": [
+    "fr",
+    "en"
+  ],
+  "langues": [
+    {
+      "code": "fr",
+      "nom": "Français",
+      "fichier": "fr.json",
+      "voix": "fr-FR",
+      "statut": "source"
+    },
+    {
+      "code": "en",
+      "nom": "English",
+      "fichier": "en.json",
+      "voix": "en-US",
+      "statut": "source"
+    },
+    {
+      "code": "basaa",
+      "nom": "Bàsàa",
+      "fichier": "basaa.json",
+      "audio": "audio/basaa.json",
+      "statut": "Traductions fournies par le locuteur bàsàa le 14 novembre 2026."
+    },
+    {
+      "code": "eton",
+      "nom": "Eton",
+      "fichier": "eton.json",
+      "audio": "audio/eton.json",
+      "etiquette": "à confirmer",
+      "statut": "Document de travail du locuteur, complété par des équivalents composés à partir du dictionnaire éton-français, non validés.",
+      "provenance": "eton-provenance.json"
+    }
+  ],
+  "variables": {
+    "prenom": "\\p{Lu}[\\p{L}'’-]*(?: \\p{Lu}[\\p{L}'’-]*){0,3}",
+    "numero_compte": "[A-Z0-9][A-Z0-9 ]{3,40}",
+    "taux": "[0-9]+(?:[.,][0-9]+)?",
+    "min": "[0-9][0-9 \\u00A0\\u202F.,]*",
+    "max": "[0-9][0-9 \\u00A0\\u202F.,]*"
+  },
+  "attributsTraduits": [
+    "aria-label",
+    "title",
+    "placeholder",
+    "alt"
+  ]
+}

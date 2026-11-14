@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "description": "Enregistrements bàsàa du locuteur, par clé de l'interface. Produit par outils/generer_audio.py : ne pas modifier à la main.",
+  "langue": "basaa",
+  "dossier": "audio/basaa",
+  "cles": {
+    "steps.1": {
+      "numero": 1,
+      "fichier": "01 - Solde.ogg"
+    },
+    "steps.2": {
+      "numero": 2,
+      "fichier": "02 - Frais.ogg"
+    },
+    "steps.3": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.ogg"
+    },
+    "steps.4": {
+      "numero": 4,
+      "fichier": "04 - Récapitulatif.ogg"
+    },
+    "steps.5": {
+      "numero": 5,
+      "fichier": "05 - Confirmation.ogg"
+    },
+    "tagline": {
+      "numero": 6,
+      "fichier": "06 - Banque en ligne.ogg"
+    },
+    "testBanner": {
+      "numero": 7,
+      "fichier": "07 - Environnement de test — données fictives, aucune….ogg"
+    },
+    "guide": {
+      "numero": 8,
+      "fichier": "08 - Protocole de test.ogg"
+    },
+    "backToHackathon": {
+      "numero": 9,
+      "fichier": "09 - Retour au hackathon.ogg"
+    },
+    "account": {
+      "numero": 14,
+      "fichier": "14 - Compte courant.ogg"
+    },
+    "accountNumberLabel": {
+      "numero": 26,
+      "fichier": "26 - Numéro de compte CM 001 2345 6789 01.ogg",
+      "valeurs": {
+        "numero_compte": "CM 001 2345 6789 01"
+      }
+    },
+    "availableBalance": {
+      "numero": 15,
+      "fichier": "15 - Solde disponible.ogg"
+    },
+    "overviewTitle": {
+      "numero": 16,
+      "fichier": "16 - Votre compte.ogg"
+    },
+    "overviewSubtitle": {
+      "numero": 17,
+      "fichier": "17 - Consultez votre solde et lancez un transfert en toute….ogg"
+    },
+    "startTransfer": {
+      "numero": 18,
+      "fichier": "18 - Effectuer un transfert.ogg"
+    },
+    "consultFees": {
+      "numero": 19,
+      "fichier": "19 - Consulter les frais.ogg"
+    },
+    "recentTransactions": {
+      "numero": 20,
+      "fichier": "20 - Transactions récentes.ogg"
+    },
+    "feesTitle": {
+      "numero": 27,
+      "fichier": "27 - Frais de transfert.ogg"
+    },
+    "feesSubtitle": {
+      "numero": 28,
+      "fichier": "28 - Choisissez le type de transfert et le montant. Les frais….ogg"
+    },
+    "operationType": {
+      "numero": 29,
+      "fichier": "29 - Type d'opération.ogg"
+    },
+    "amountLabel": {
+      "numero": 30,
+      "fichier": "30 - Montant à envoyer.ogg"
+    },
+    "feeLabel": {
+      "numero": 2,
+      "fichier": "02 - Frais.ogg"
+    },
+    "free": {
+      "numero": 31,
+      "fichier": "31 - Gratuit.ogg"
+    },
+    "totalLabel": {
+      "numero": 32,
+      "fichier": "32 - Total à débiter.ogg"
+    },
+    "balanceAfter": {
+      "numero": 33,
+      "fichier": "33 - Solde après opération.ogg"
+    },
+    "continue": {
+      "numero": 34,
+      "fichier": "34 - Continuer.ogg"
+    },
+    "back": {
+      "numero": 35,
+      "fichier": "35 - Retour.ogg"
+    },
+    "beneficiaryTitle": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.ogg"
+    },
+    "beneficiarySubtitle": {
+      "numero": 41,
+      "fichier": "41 - Renseignez les informations du destinataire. Vérifiez….mp3"
+    },
+    "beneficiaryName": {
+      "numero": 42,
+      "fichier": "42 - Nom du bénéficiaire.mp3"
+    },
+    "beneficiaryPhone": {
+      "numero": 43,
+      "fichier": "43 - Numéro de téléphone.mp3"
+    },
+    "reason": {
+      "numero": 44,
+      "fichier": "44 - Motif du transfert.mp3"
+    },
+    "note": {
+      "numero": 45,
+      "fichier": "45 - Note (optionnel).mp3"
+    },
+    "verifyLabel": {
+      "numero": 46,
+      "fichier": "46 - J'ai vérifié le nom et le numéro du bénéficiaire.mp3"
+    },
+    "newBeneficiaryWarning": {
+      "numero": 47,
+      "fichier": "47 - Ce bénéficiaire n'a jamais été utilisé sur ce compte….mp3"
+    },
+    "summaryTitle": {
+      "numero": 4,
+      "fichier": "04 - Récapitulatif.ogg"
+    },
+    "summarySubtitle": {
+      "numero": 48,
+      "fichier": "48 - Vérifiez les informations avant de confirmer le transfert.mp3"
+    },
+    "summaryAmount": {
+      "numero": 49,
+      "fichier": "49 - Montant.mp3"
+    },
+    "summaryFee": {
+      "numero": 2,
+      "fichier": "02 - Frais.ogg"
+    },
+    "summaryTotal": {
+      "numero": 50,
+      "fichier": "50 - Total débité.mp3"
+    },
+    "summaryBeneficiary": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.ogg"
+    },
+    "summaryPhone": {
+      "numero": 51,
+      "fichier": "51 - Téléphone.mp3"
+    },
+    "summaryReference": {
+      "numero": 52,
+      "fichier": "52 - Référence.mp3"
+    },
+    "summaryOperation": {
+      "numero": 53,
+      "fichier": "53 - Opération.mp3"
+    },
+    "confirmLabel": {
+      "numero": 54,
+      "fichier": "54 - Je confirme que les informations ci-dessus sont correctes.mp3"
+    },
+    "confirmButton": {
+      "numero": 55,
+      "fichier": "55 - Confirmer le transfert.mp3"
+    },
+    "edit": {
+      "numero": 56,
+      "fichier": "56 - Modifier.mp3"
+    },
+    "receiptTitle": {
+      "numero": 57,
+      "fichier": "57 - Transfert effectué.mp3"
+    },
+    "receiptSubtitle": {
+      "numero": 58,
+      "fichier": "58 - Votre transfert a été envoyé avec succès.mp3"
+    },
+    "receiptReference": {
+      "numero": 52,
+      "fichier": "52 - Référence.mp3"
+    },
+    "receiptAmount": {
+      "numero": 49,
+      "fichier": "49 - Montant.mp3"
+    },
+    "receiptFee": {
+      "numero": 2,
+      "fichier": "02 - Frais.ogg"
+    },
+    "receiptTotal": {
+      "numero": 50,
+      "fichier": "50 - Total débité.mp3"
+    },
+    "receiptBeneficiary": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.ogg"
+    },
+    "receiptStatus": {
+      "numero": 59,
+      "fichier": "59 - Statut.mp3"
+    },
+    "receiptStatusValue": {
+      "numero": 60,
+      "fichier": "60 - Succès.mp3"
+    },
+    "newTransfer": {
+      "numero": 61,
+      "fichier": "61 - Nouveau transfert.mp3"
+    },
+    "importantMessage": {
+      "numero": 62,
+      "fichier": "62 - Message important.mp3"
+    },
+    "errorTitle": {
+      "numero": 63,
+      "fichier": "63 - Une erreur est survenue.mp3"
+    },
+    "securityTitle": {
+      "numero": 64,
+      "fichier": "64 - Alerte de sécurité.mp3"
+    },
+    "dismiss": {
+      "numero": 65,
+      "fichier": "65 - Fermer.mp3"
+    },
+    "securityTipTitle": {
+      "numero": 10,
+      "fichier": "10 - Sécurité.ogg"
+    },
+    "securityTip": {
+      "numero": 11,
+      "fichier": "11 - Vérifiez toujours le nom et le numéro du bénéficiaire avant….ogg"
+    },
+    "protected": {
+      "numero": 12,
+      "fichier": "12 - Connexion sécurisée.ogg"
+    },
+    "testFooter": {
+      "numero": 13,
+      "fichier": "13 - Safinum Pay — environnement de démonstration. Ne saisissez….ogg"
+    },
+    "transactions.1": {
+      "numero": 21,
+      "fichier": "21 - Paiement marchand.ogg"
+    },
+    "transactions.2": {
+      "numero": 22,
+      "fichier": "22 - Salaire reçu.ogg"
+    },
+    "transactions.3": {
+      "numero": 23,
+      "fichier": "23 - Transfert reçu.ogg"
+    },
+    "transactions.4": {
+      "numero": 24,
+      "fichier": "24 - Facture électricité.ogg"
+    },
+    "operation.safinum.label": {
+      "numero": 36,
+      "fichier": "36 - Compte Safinum.ogg"
+    },
+    "operation.mobile_money.label": {
+      "numero": 37,
+      "fichier": "37 - Mobile Money.ogg"
+    },
+    "operation.other_bank.label": {
+      "numero": 38,
+      "fichier": "38 - Autre banque.ogg"
+    },
+    "operation.safinum.description": {
+      "numero": 39,
+      "fichier": "39 - Transfert instantané et gratuit.ogg"
+    },
+    "error.AMOUNT_001": {
+      "numero": 66,
+      "fichier": "66 - Le montant doit être supérieur à zéro.mp3"
+    },
+    "error.AMOUNT_002": {
+      "numero": 67,
+      "fichier": "67 - Solde insuffisant pour effectuer ce transfert.mp3"
+    },
+    "error.BENEFICIARY_001": {
+      "numero": 68,
+      "fichier": "68 - Veuillez renseigner le nom et le numéro du bénéficiaire.mp3"
+    },
+    "error.SECURITY_001": {
+      "numero": 69,
+      "fichier": "69 - Alerte de sécurité vérifiez le numéro du bénéficiaire avant….mp3"
+    },
+    "error.SECURITY_002": {
+      "numero": 70,
+      "fichier": "70 - Alerte de sécurité ce bénéficiaire n'a jamais été utilisé….mp3"
+    },
+    "error.NETWORK_001": {
+      "numero": 71,
+      "fichier": "71 - Erreur réseau le service est temporairement indisponible….mp3"
+    },
+    "error.CONFIRM_001": {
+      "numero": 72,
+      "fichier": "72 - Vous devez confirmer les informations avant de valider le….mp3"
+    }
+  },
+  "autresPrises": {},
+  "sansAudio": [],
+  "aVerifierAvantLecture": [
+    {
+      "cle": "hello",
+      "numero": 25,
+      "francais": "Bonjour, Amina",
+      "fichier": "25 - Bonjour, Amina.ogg"
+    },
+    {
+      "cle": "operation.fee_description",
+      "numero": 40,
+      "francais": "Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA)",
+      "fichier": "40 - Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA).ogg"
+    }
+  ],
+  "fichiersNonClasses": []
+}

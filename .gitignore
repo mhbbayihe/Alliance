@@ -1,0 +1,9 @@
+# Dictionnaire français-basaa (Njock, 2005) décodé en entier : aucune licence indiquée, non publié.
+dictionnaires/
+glossaire-dictionnaires.json
+
+# Copie du script de la page de test Safinum : ne nous appartient pas.
+outils/source-page/
+
+# Notes de travail internes.
+CLAUDE.md

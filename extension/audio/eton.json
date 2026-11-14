@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "description": "Enregistrements éton du locuteur, par clé de l'interface. Produit par outils/generer_audio.py : ne pas modifier à la main.",
+  "langue": "eton",
+  "dossier": "audio/eton",
+  "cles": {
+    "steps.3": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.aac"
+    },
+    "steps.4": {
+      "numero": 4,
+      "fichier": "04 - Récapitulatif.aac"
+    },
+    "steps.5": {
+      "numero": 5,
+      "fichier": "05 - Confirmation.aac"
+    },
+    "tagline": {
+      "numero": 6,
+      "fichier": "06 - Banque en ligne.aac"
+    },
+    "guide": {
+      "numero": 8,
+      "fichier": "08 - Protocole de test.aac"
+    },
+    "backToHackathon": {
+      "numero": 9,
+      "fichier": "09 - Retour au hackathon.aac"
+    },
+    "hello": {
+      "numero": 25,
+      "fichier": "25 - Bonjour, Amina.aac",
+      "valeurs": {
+        "prenom": "Amina"
+      }
+    },
+    "account": {
+      "numero": 14,
+      "fichier": "14 - Compte courant.aac"
+    },
+    "accountNumberLabel": {
+      "numero": 26,
+      "fichier": "26 - Numéro de compte CM 001 2345 6789 01.aac",
+      "valeurs": {
+        "numero_compte": "CM 001 2345 6789 01"
+      }
+    },
+    "availableBalance": {
+      "numero": 15,
+      "fichier": "15 - Solde disponible.aac"
+    },
+    "overviewSubtitle": {
+      "numero": 17,
+      "fichier": "17 - Consultez votre solde et lancez un transfert en toute….aac"
+    },
+    "startTransfer": {
+      "numero": 18,
+      "fichier": "18 - Effectuer un transfert.aac"
+    },
+    "consultFees": {
+      "numero": 19,
+      "fichier": "19 - Consulter les frais.aac"
+    },
+    "recentTransactions": {
+      "numero": 20,
+      "fichier": "20 - Transactions récentes.aac"
+    },
+    "feesTitle": {
+      "numero": 27,
+      "fichier": "27 - Frais de transfert.aac"
+    },
+    "feesSubtitle": {
+      "numero": 28,
+      "fichier": "28 - Choisissez le type de transfert et le montant. Les frais….aac"
+    },
+    "operationType": {
+      "numero": 29,
+      "fichier": "29 - Type d'opération.aac"
+    },
+    "amountLabel": {
+      "numero": 30,
+      "fichier": "30 - Montant à envoyer.aac"
+    },
+    "free": {
+      "numero": 31,
+      "fichier": "31 - Gratuit.aac"
+    },
+    "totalLabel": {
+      "numero": 32,
+      "fichier": "32 - Total à débiter.aac"
+    },
+    "balanceAfter": {
+      "numero": 33,
+      "fichier": "33 - Solde après opération.aac"
+    },
+    "continue": {
+      "numero": 34,
+      "fichier": "34 - Continuer.aac"
+    },
+    "back": {
+      "numero": 35,
+      "fichier": "35 - Retour.aac"
+    },
+    "beneficiaryTitle": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.aac"
+    },
+    "beneficiarySubtitle": {
+      "numero": 41,
+      "fichier": "41 - Renseignez les informations du destinataire. Vérifiez….aac"
+    },
+    "beneficiaryPhone": {
+      "numero": 43,
+      "fichier": "43 - Numéro de téléphone.aac"
+    },
+    "reason": {
+      "numero": 44,
+      "fichier": "44 - Motif du transfert.aac"
+    },
+    "note": {
+      "numero": 45,
+      "fichier": "45 - Note (optionnel).aac"
+    },
+    "verifyLabel": {
+      "numero": 46,
+      "fichier": "46 - J'ai vérifié le nom et le numéro du bénéficiaire.aac"
+    },
+    "newBeneficiaryWarning": {
+      "numero": 47,
+      "fichier": "47 - Ce bénéficiaire n'a jamais été utilisé sur ce compte….aac"
+    },
+    "summaryTitle": {
+      "numero": 4,
+      "fichier": "04 - Récapitulatif.aac"
+    },
+    "summarySubtitle": {
+      "numero": 48,
+      "fichier": "48 - Vérifiez les informations avant de confirmer le transfert.aac"
+    },
+    "summaryAmount": {
+      "numero": 49,
+      "fichier": "49 - Montant.aac"
+    },
+    "summaryTotal": {
+      "numero": 50,
+      "fichier": "50 - Total débité.aac"
+    },
+    "summaryBeneficiary": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.aac"
+    },
+    "summaryPhone": {
+      "numero": 51,
+      "fichier": "51 - Téléphone.aac"
+    },
+    "summaryReference": {
+      "numero": 52,
+      "fichier": "52 - Référence.aac"
+    },
+    "summaryOperation": {
+      "numero": 53,
+      "fichier": "53 - Opération.aac"
+    },
+    "confirmLabel": {
+      "numero": 54,
+      "fichier": "54 - Je confirme que les informations ci-dessus sont correctes.aac"
+    },
+    "confirmButton": {
+      "numero": 55,
+      "fichier": "55 - Confirmer le transfert.aac"
+    },
+    "edit": {
+      "numero": 56,
+      "fichier": "56 - Modifier.aac"
+    },
+    "receiptTitle": {
+      "numero": 57,
+      "fichier": "57 - Transfert effectué.aac"
+    },
+    "receiptSubtitle": {
+      "numero": 58,
+      "fichier": "58 - Votre transfert a été envoyé avec succès.aac"
+    },
+    "receiptReference": {
+      "numero": 52,
+      "fichier": "52 - Référence.aac"
+    },
+    "receiptAmount": {
+      "numero": 49,
+      "fichier": "49 - Montant.aac"
+    },
+    "receiptTotal": {
+      "numero": 50,
+      "fichier": "50 - Total débité.aac"
+    },
+    "receiptBeneficiary": {
+      "numero": 3,
+      "fichier": "03 - Bénéficiaire.aac"
+    },
+    "receiptStatus": {
+      "numero": 59,
+      "fichier": "59 - Statut.aac"
+    },
+    "receiptStatusValue": {
+      "numero": 60,
+      "fichier": "60 - Succès.aac"
+    },
+    "newTransfer": {
+      "numero": 61,
+      "fichier": "61 - Nouveau transfert.aac"
+    },
+    "importantMessage": {
+      "numero": 62,
+      "fichier": "62 - Message important.aac"
+    },
+    "errorTitle": {
+      "numero": 63,
+      "fichier": "63 - Une erreur est survenue.aac"
+    },
+    "securityTitle": {
+      "numero": 64,
+      "fichier": "64 - Alerte de sécurité.aac"
+    },
+    "dismiss": {
+      "numero": 65,
+      "fichier": "65 - Fermer.aac"
+    },
+    "securityTipTitle": {
+      "numero": 10,
+      "fichier": "10 - Sécurité.aac"
+    },
+    "securityTip": {
+      "numero": 11,
+      "fichier": "11 - Vérifiez toujours le nom et le numéro du bénéficiaire avant….aac"
+    },
+    "protected": {
+      "numero": 12,
+      "fichier": "12 - Connexion sécurisée.aac"
+    },
+    "transactions.1": {
+      "numero": 21,
+      "fichier": "21 - Paiement marchand.aac"
+    },
+    "transactions.2": {
+      "numero": 22,
+      "fichier": "22 - Salaire reçu.aac"
+    },
+    "transactions.3": {
+      "numero": 23,
+      "fichier": "23 - Transfert reçu.aac"
+    },
+    "transactions.4": {
+      "numero": 24,
+      "fichier": "24 - Facture électricité.aac"
+    },
+    "operation.safinum.label": {
+      "numero": 36,
+      "fichier": "36 - Compte Safinum.aac"
+    },
+    "operation.mobile_money.label": {
+      "numero": 37,
+      "fichier": "37 - Mobile Money.aac"
+    },
+    "operation.other_bank.label": {
+      "numero": 38,
+      "fichier": "38 - Autre banque.aac"
+    },
+    "error.AMOUNT_001": {
+      "numero": 66,
+      "fichier": "66 - Le montant doit être supérieur à zéro.aac"
+    },
+    "error.AMOUNT_002": {
+      "numero": 67,
+      "fichier": "67 - Solde insuffisant pour effectuer ce transfert.aac"
+    },
+    "error.SECURITY_001": {
+      "numero": 69,
+      "fichier": "69 - Alerte de sécurité vérifiez le numéro du bénéficiaire avant….aac"
+    },
+    "error.NETWORK_001": {
+      "numero": 71,
+      "fichier": "71 - Erreur réseau le service est temporairement indisponible….aac"
+    },
+    "error.CONFIRM_001": {
+      "numero": 72,
+      "fichier": "72 - Vous devez confirmer les informations avant de valider le….aac"
+    }
+  },
+  "autresPrises": {
+    "3": [
+      "03 - Bénéficiaire (prise 2).aac"
+    ],
+    "5": [
+      "05 - Confirmation (prise 2).aac"
+    ],
+    "10": [
+      "10 - Sécurité (prise 2).aac"
+    ],
+    "11": [
+      "11 - Vérifiez toujours le nom et le numéro du bénéficiaire avant… (prise 2).aac",
+      "11 - Vérifiez toujours le nom et le numéro du bénéficiaire avant… (prise 3).aac"
+    ],
+    "12": [
+      "12 - Connexion sécurisée (prise 2).aac"
+    ],
+    "15": [
+      "15 - Solde disponible (prise 2).aac"
+    ],
+    "17": [
+      "17 - Consultez votre solde et lancez un transfert en toute… (prise 2).aac"
+    ],
+    "25": [
+      "25 - Bonjour, Amina (prise 2).aac"
+    ],
+    "28": [
+      "28 - Choisissez le type de transfert et le montant. Les frais… (prise 2).aac",
+      "28 - Choisissez le type de transfert et le montant. Les frais… (prise 3).aac"
+    ],
+    "29": [
+      "29 - Type d'opération (prise 2).aac"
+    ],
+    "30": [
+      "30 - Montant à envoyer (prise 2).aac"
+    ],
+    "57": [
+      "57 - Transfert effectué (prise 2).aac"
+    ],
+    "58": [
+      "58 - Votre transfert a été envoyé avec succès (prise 2).aac"
+    ]
+  },
+  "sansAudio": [
+    {
+      "cle": "steps.1",
+      "numero": 1,
+      "francais": "Solde"
+    },
+    {
+      "cle": "steps.2",
+      "numero": 2,
+      "francais": "Frais"
+    },
+    {
+      "cle": "testBanner",
+      "numero": 7,
+      "francais": "Environnement de test — données fictives, aucune transaction réelle."
+    },
+    {
+      "cle": "overviewTitle",
+      "numero": 16,
+      "francais": "Votre compte"
+    },
+    {
+      "cle": "feeLabel",
+      "numero": 2,
+      "francais": "Frais"
+    },
+    {
+      "cle": "beneficiaryName",
+      "numero": 42,
+      "francais": "Nom du bénéficiaire"
+    },
+    {
+      "cle": "summaryFee",
+      "numero": 2,
+      "francais": "Frais"
+    },
+    {
+      "cle": "receiptFee",
+      "numero": 2,
+      "francais": "Frais"
+    },
+    {
+      "cle": "testFooter",
+      "numero": 13,
+      "francais": "Safinum Pay — environnement de démonstration. Ne saisissez aucune donnée personnelle réelle."
+    },
+    {
+      "cle": "operation.safinum.description",
+      "numero": 39,
+      "francais": "Transfert instantané et gratuit"
+    },
+    {
+      "cle": "operation.fee_description",
+      "numero": 40,
+      "francais": "Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA)"
+    },
+    {
+      "cle": "error.BENEFICIARY_001",
+      "numero": 68,
+      "francais": "Veuillez renseigner le nom et le numéro du bénéficiaire."
+    },
+    {
+      "cle": "error.SECURITY_002",
+      "numero": 70,
+      "francais": "Alerte de sécurité : ce bénéficiaire n'a jamais été utilisé sur ce compte."
+    }
+  ],
+  "aVerifierAvantLecture": [],
+  "fichiersNonClasses": [
+    "alerte de sécurité.aac"
+  ]
+}

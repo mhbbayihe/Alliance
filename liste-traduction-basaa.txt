@@ -1,0 +1,360 @@
+﻿TRADUCTION FRANÇAIS → BASAA (BASSA)
+Textes d'une application bancaire
+
+Bonjour,
+
+Merci de nous aider. Ces phrases viennent d'une application qui permet de
+consulter son solde et d'envoyer de l'argent. Nous voulons que des personnes
+qui lisent mal le français puissent l'utiliser en basaa.
+
+COMMENT FAIRE
+
+1. Écrivez la traduction sur la ligne « Basaa : » sous chaque phrase.
+2. Traduisez le sens, comme on le dirait naturellement, pas mot à mot.
+3. Pour les boutons et les titres, restez court.
+4. Utilisez toujours le même mot basaa pour le même mot français
+   (transfert, solde, frais, bénéficiaire, montant, compte).
+5. Ne traduisez pas les noms de personnes, les chiffres, « FCFA » ni
+   « Safinum ».
+6. Si possible, écrivez avec l'orthographe basaa (ɓ, ŋ, ɛ, ɔ et les tons).
+7. Si vous hésitez ou si le mot n'existe pas en basaa, ne devinez pas :
+   écrivez « ? » et expliquez en quelques mots.
+
+Les phrases marquées [IMPORTANT] concernent l'argent ou la sécurité.
+Une erreur de sens pourrait tromper l'utilisateur : le sens doit être exact.
+
+Il y a 72 phrases.
+
+============================================================
+A. Éléments présents sur tous les écrans
+============================================================
+
+1. (nom d'étape)
+   Français : Solde
+   Basaa : 
+
+2. (nom d'étape)
+   Français : Frais
+   Basaa : 
+
+3. (nom d'étape)
+   Français : Bénéficiaire
+   Basaa : 
+
+4. (nom d'étape)
+   Français : Récapitulatif
+   Basaa : 
+
+5. (nom d'étape) [IMPORTANT]
+   Français : Confirmation
+   Note : Dernière étape : le transfert est confirmé.
+   Basaa : 
+
+6. (en-tête)
+   Français : Banque en ligne
+   Basaa : 
+
+7. (bandeau)
+   Français : Environnement de test — données fictives, aucune transaction réelle.
+   Basaa : 
+
+8. (lien du bandeau)
+   Français : Protocole de test
+   Basaa : 
+
+9. (lien du bandeau)
+   Français : Retour au hackathon
+   Basaa : 
+
+10. (titre)
+   Français : Sécurité
+   Basaa : 
+
+11. (conseil de sécurité) [IMPORTANT]
+   Français : Vérifiez toujours le nom et le numéro du bénéficiaire avant de confirmer un transfert.
+   Basaa : 
+
+12. (statut)
+   Français : Connexion sécurisée
+   Note : Indique que la connexion à l'application est sûre.
+   Basaa : 
+
+13. (pied de page)
+   Français : Safinum Pay — environnement de démonstration. Ne saisissez aucune donnée personnelle réelle.
+   Note : « Safinum Pay » est le nom de l'application : ne pas le traduire.
+   Basaa : 
+
+============================================================
+B. Écran 1 — Solde et compte
+============================================================
+
+14. (type de compte)
+   Français : Compte courant
+   Basaa : 
+
+15. (libellé du solde)
+   Français : Solde disponible
+   Basaa : 
+
+16. (titre)
+   Français : Votre compte
+   Basaa : 
+
+17. (instruction)
+   Français : Consultez votre solde et lancez un transfert en toute sécurité.
+   Basaa : 
+
+18. (bouton d'action) [IMPORTANT]
+   Français : Effectuer un transfert
+   Basaa : 
+
+19. (bouton d'action)
+   Français : Consulter les frais
+   Basaa : 
+
+20. (titre)
+   Français : Transactions récentes
+   Basaa : 
+
+21. (libellé de transaction)
+   Français : Paiement marchand
+   Basaa : 
+
+22. (libellé de transaction)
+   Français : Salaire reçu
+   Basaa : 
+
+23. (libellé de transaction)
+   Français : Transfert reçu
+   Basaa : 
+
+24. (libellé de transaction)
+   Français : Facture électricité
+   Basaa : 
+
+25. (titre)
+   Français : Bonjour, Amina
+   Note : « Amina » est un prénom : ne pas le traduire.
+   Basaa : 
+
+26. (texte)
+   Français : Numéro de compte : CM 001 2345 6789 01
+   Note : Garder le numéro tel quel.
+   Basaa : 
+
+============================================================
+C. Écran 2 — Frais de transfert
+============================================================
+
+27. (titre)
+   Français : Frais de transfert
+   Basaa : 
+
+28. (instruction) [IMPORTANT]
+   Français : Choisissez le type de transfert et le montant. Les frais sont calculés automatiquement.
+   Basaa : 
+
+29. (libellé de champ)
+   Français : Type d'opération
+   Basaa : 
+
+30. (libellé de champ) [IMPORTANT]
+   Français : Montant à envoyer
+   Basaa : 
+
+31. (valeur de frais) [IMPORTANT]
+   Français : Gratuit
+   Note : Signifie : aucun frais à payer.
+   Basaa : 
+
+32. (libellé de total) [IMPORTANT]
+   Français : Total à débiter
+   Basaa : 
+
+33. (libellé de solde) [IMPORTANT]
+   Français : Solde après opération
+   Basaa : 
+
+34. (bouton de navigation)
+   Français : Continuer
+   Basaa : 
+
+35. (bouton de navigation)
+   Français : Retour
+   Basaa : 
+
+36. (choix dans une liste)
+   Français : Compte Safinum
+   Note : « Safinum » est un nom : ne pas le traduire.
+   Basaa : 
+
+37. (choix dans une liste)
+   Français : Mobile Money
+   Note : Si l'on dit « Mobile Money » tel quel en basaa, le garder.
+   Basaa : 
+
+38. (choix dans une liste)
+   Français : Autre banque
+   Basaa : 
+
+39. (description des frais) [IMPORTANT]
+   Français : Transfert instantané et gratuit
+   Basaa : 
+
+40. (description des frais) [IMPORTANT]
+   Français : Frais de 1,5 % (min. 100 FCFA, max. 2 500 FCFA)
+   Note : Garder les chiffres, le signe % et « FCFA » tels quels. Les chiffres changent selon le cas, la phrase reste la même.
+   Basaa : 
+
+============================================================
+D. Écran 3 — Bénéficiaire
+============================================================
+
+41. (instruction de sécurité) [IMPORTANT]
+   Français : Renseignez les informations du destinataire. Vérifiez toujours le numéro avant de valider.
+   Basaa : 
+
+42. (libellé de champ)
+   Français : Nom du bénéficiaire
+   Basaa : 
+
+43. (libellé de champ)
+   Français : Numéro de téléphone
+   Basaa : 
+
+44. (libellé de champ)
+   Français : Motif du transfert
+   Note : La raison pour laquelle on envoie l'argent.
+   Basaa : 
+
+45. (libellé de champ)
+   Français : Note (optionnel)
+   Note : Champ facultatif où l'on peut écrire un commentaire.
+   Basaa : 
+
+46. (case à cocher de vérification) [IMPORTANT]
+   Français : J'ai vérifié le nom et le numéro du bénéficiaire.
+   Basaa : 
+
+47. (avertissement de sécurité) [IMPORTANT]
+   Français : Ce bénéficiaire n'a jamais été utilisé sur ce compte. Vérifiez le numéro avant de continuer.
+   Basaa : 
+
+============================================================
+E. Écran 4 — Récapitulatif avant confirmation
+============================================================
+
+48. (instruction) [IMPORTANT]
+   Français : Vérifiez les informations avant de confirmer le transfert.
+   Basaa : 
+
+49. (libellé du récapitulatif)
+   Français : Montant
+   Basaa : 
+
+50. (libellé du récapitulatif) [IMPORTANT]
+   Français : Total débité
+   Basaa : 
+
+51. (libellé du récapitulatif)
+   Français : Téléphone
+   Basaa : 
+
+52. (libellé du récapitulatif)
+   Français : Référence 
+   Basaa : 
+
+53. (libellé du récapitulatif)
+   Français : Opération
+   Note : Le type de transfert choisi.
+   Basaa : 
+
+54. (case à cocher de confirmation) [IMPORTANT]
+   Français : Je confirme que les informations ci-dessus sont correctes.
+   Basaa : 
+
+55. (bouton d'action) [IMPORTANT]
+   Français : Confirmer le transfert
+   Basaa : 
+
+56. (bouton de navigation)
+   Français : Modifier
+   Note : Bouton pour revenir corriger les informations.
+   Basaa : 
+
+============================================================
+F. Écran 5 — Reçu
+============================================================
+
+57. (titre du reçu) [IMPORTANT]
+   Français : Transfert effectué
+   Basaa : 
+
+58. (message de succès) [IMPORTANT]
+   Français : Votre transfert a été envoyé avec succès.
+   Basaa : 
+
+59. (libellé du reçu)
+   Français : Statut
+   Note : L'état du transfert (réussi ou non).
+   Basaa : 
+
+60. (valeur de statut) [IMPORTANT]
+   Français : Succès
+   Basaa : 
+
+61. (bouton d'action)
+   Français : Nouveau transfert
+   Basaa : 
+
+============================================================
+G. Messages d'erreur et alertes de sécurité
+============================================================
+
+62. (titre d'un message)
+   Français : Message important
+   Basaa : 
+
+63. (titre d'erreur)
+   Français : Une erreur est survenue
+   Basaa : 
+
+64. (titre d'alerte de sécurité) [IMPORTANT]
+   Français : Alerte de sécurité
+   Basaa : 
+
+65. (bouton)
+   Français : Fermer
+   Note : Bouton pour fermer un message.
+   Basaa : 
+
+66. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Le montant doit être supérieur à zéro.
+   Basaa : 
+
+67. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Solde insuffisant pour effectuer ce transfert.
+   Basaa : 
+
+68. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Veuillez renseigner le nom et le numéro du bénéficiaire.
+   Basaa : 
+
+69. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Alerte de sécurité : vérifiez le numéro du bénéficiaire avant de continuer.
+   Basaa : 
+
+70. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Alerte de sécurité : ce bénéficiaire n'a jamais été utilisé sur ce compte.
+   Basaa : 
+
+71. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Erreur réseau : le service est temporairement indisponible. Réessayez.
+   Basaa : 
+
+72. (message d'erreur ou d'alerte) [IMPORTANT]
+   Français : Vous devez confirmer les informations avant de valider le transfert.
+   Basaa : 
+
+============================================================
+Merci beaucoup pour votre aide.
