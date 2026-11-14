@@ -1,4 +1,4 @@
-globalThis.SAFILANG_DATASET = Object.freeze({
+globalThis.ALLIANCE_DATASET = Object.freeze({
   schemaVersion: 1,
   corpusType: "financial-interface-translation",
   sourceLanguage: "fr",

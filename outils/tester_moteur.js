@@ -8,7 +8,7 @@ vm.runInThisContext(fs.readFileSync(path.join(ext, "engine.js"), "utf8"));
 const read = (name) => JSON.parse(fs.readFileSync(path.join(ext, "locales", name), "utf8"));
 const index = read("index.json");
 const tables = Object.fromEntries(index.langues.map((l) => [l.code, read(l.fichier)]));
-const engine = SafiLangEngine.create(index, tables);
+const engine = AllianceEngine.create(index, tables);
 
 let failures = 0;
 const check = (label, ok, detail = "") => {
@@ -104,13 +104,13 @@ const tone = (amplitude) => {
   for (let i = RATE; i < RATE * 1.5; i += 1) samples[i] = amplitude * Math.sin((2 * Math.PI * 220 * i) / RATE);
   return samples;
 };
-const quiet = SafiLangSignal.analyze(tone(0.02), RATE);
+const quiet = AllianceSignal.analyze(tone(0.02), RATE);
 check("signal : silence de debut coupe", quiet.start > 0.85 && quiet.start <= 1, String(quiet.start));
 check("signal : silence de fin coupe", quiet.end >= 1.5 && quiet.end < 1.75, String(quiet.end));
-check("signal : son faible remonte a -20 dB", Math.abs(quiet.voiceDb + SafiLangSignal.db(quiet.gain) + 20) < 0.5, String(quiet.gain));
-const loud = SafiLangSignal.analyze(tone(0.9), RATE);
-check("signal : son fort attenue a -20 dB", loud.gain < 1 && Math.abs(loud.voiceDb + SafiLangSignal.db(loud.gain) + 20) < 0.5, String(loud.gain));
-const mute = SafiLangSignal.analyze(new Float32Array(RATE), RATE);
+check("signal : son faible remonte a -20 dB", Math.abs(quiet.voiceDb + AllianceSignal.db(quiet.gain) + 20) < 0.5, String(quiet.gain));
+const loud = AllianceSignal.analyze(tone(0.9), RATE);
+check("signal : son fort attenue a -20 dB", loud.gain < 1 && Math.abs(loud.voiceDb + AllianceSignal.db(loud.gain) + 20) < 0.5, String(loud.gain));
+const mute = AllianceSignal.analyze(new Float32Array(RATE), RATE);
 check("signal : fichier muet inchange", mute.gain === 1 && mute.start === 0 && !mute.voiced);
 
 console.log(`${keys.length} cles, ${index.langues.length} langues, ${pairs} correspondances verifiees, ${failures} echec(s)`);

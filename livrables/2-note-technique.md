@@ -1,11 +1,11 @@
-# SafiLang — note technique
+# Alliance — note technique
 
 **SAFINUM Innovate Challenge — épreuve de présélection**
 Version du prototype : 0.9.0 — Équipe : [nom de l'équipe]
 
 ## 1. Architecture
 
-SafiLang est une extension de navigateur Manifest V3 pour Chrome et Edge. Tout s'exécute dans le navigateur de l'utilisateur ; il n'y a ni serveur, ni compte, ni appel réseau.
+Alliance est une extension de navigateur Manifest V3 pour Chrome et Edge. Tout s'exécute dans le navigateur de l'utilisateur ; il n'y a ni serveur, ni compte, ni appel réseau.
 
 ```
 Page du service financier (inchangée)

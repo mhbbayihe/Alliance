@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "SafiLang - langues nationales",
-  "version": "0.9.0",
+  "name": "Alliance - langues nationales",
+  "version": "0.9.1",
   "description": "Affiche une interface financière dans la langue choisie à partir de fichiers d'équivalences locaux.",
   "permissions": ["storage"],
   "host_permissions": [

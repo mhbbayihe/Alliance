@@ -1,4 +1,4 @@
-# SafiLang — extension de traduction par équivalences
+# Alliance — extension de traduction par équivalences
 
 Extension Manifest V3 pour Chrome et Edge. Elle affiche une interface financière existante dans la langue choisie, sans modifier le code de la page : chaque texte reconnu est remplacé par son équivalent, lu dans des fichiers JSON livrés avec l'extension.
 

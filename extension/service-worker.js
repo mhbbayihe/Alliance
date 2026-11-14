@@ -134,7 +134,7 @@ async function translateBatch(texts) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message?.type !== "safilang:translate-bassa") return undefined;
+  if (message?.type !== "alliance:translate-bassa") return undefined;
   if (!isAllowedPage(sender.tab?.url || sender.url)) {
     sendResponse({ error: "Cette page n'est pas autorisée à utiliser le modèle local." });
     return undefined;
@@ -143,7 +143,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   translateBatch(message.texts)
     .then((translations) => sendResponse({ translations }))
     .catch((error) => {
-      console.error("SafiLang: échec de la traduction locale.", error);
+      console.error("Alliance: échec de la traduction locale.", error);
       sendResponse({
         error: error.name === "AbortError"
           ? "Ollama n'a pas répondu dans le délai prévu."

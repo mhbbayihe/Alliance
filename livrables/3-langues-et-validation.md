@@ -1,4 +1,4 @@
-# SafiLang — langues prises en charge et validation linguistique
+# Alliance — langues prises en charge et validation linguistique
 
 **SAFINUM Innovate Challenge — épreuve de présélection**
 Équipe : [nom de l'équipe] — État au 14 novembre 2026

@@ -1,8 +1,8 @@
 (() => {
-  const dataset = globalThis.SAFILANG_DATASET;
-  const lexicon = globalThis.SAFILANG_DICTIONARY_LEXICON;
+  const dataset = globalThis.ALLIANCE_DATASET;
+  const lexicon = globalThis.ALLIANCE_DICTIONARY_LEXICON;
   if (!dataset || !Array.isArray(dataset.records) || !lexicon || !Array.isArray(lexicon.records)) {
-    console.error("SafiLang: corpus bilingue ou lexique introuvable/invalide.");
+    console.error("Alliance: corpus bilingue ou lexique introuvable/invalide.");
     return;
   }
 
@@ -17,7 +17,7 @@
   const aiAppliedText = new WeakMap();
   const aiAppliedNodes = new Set();
   const host = document.createElement("div");
-  host.id = "safilang-host";
+  host.id = "alliance-host";
   host.style.position = "fixed";
   host.style.zIndex = "2147483647";
   document.documentElement.append(host);
@@ -63,17 +63,17 @@
   launcher.type = "button";
   launcher.textContent = "Langue : français";
   launcher.setAttribute("aria-expanded", "false");
-  launcher.setAttribute("aria-controls", "safilang-panel");
+  launcher.setAttribute("aria-controls", "alliance-panel");
 
   const panel = document.createElement("section");
   panel.className = "panel";
-  panel.id = "safilang-panel";
-  panel.setAttribute("aria-labelledby", "safilang-title");
+  panel.id = "alliance-panel";
+  panel.setAttribute("aria-labelledby", "alliance-title");
   panel.hidden = true;
   panel.innerHTML = `
-    <div class="heading"><h2 id="safilang-title">Langue de la page</h2></div>
-    <label for="safilang-language">Choisir une langue</label>
-    <select id="safilang-language">
+    <div class="heading"><h2 id="alliance-title">Langue de la page</h2></div>
+    <label for="alliance-language">Choisir une langue</label>
+    <select id="alliance-language">
       <option value="fr">Français</option>
       <option value="eton">Eton (phrases validées)</option>
       <option value="basaa-ai">Bàsàa — IA locale expérimentale</option>
@@ -81,19 +81,19 @@
     <p class="notice"></p>
     <p class="status" role="status" aria-live="polite"></p>
     <div class="actions">
-      <button class="action" id="safilang-generate" type="button" hidden>Générer un aperçu avec Ollama local</button>
-      <button class="action secondary" id="safilang-restore" type="button" hidden>Rétablir les textes d’origine</button>
+      <button class="action" id="alliance-generate" type="button" hidden>Générer un aperçu avec Ollama local</button>
+      <button class="action secondary" id="alliance-restore" type="button" hidden>Rétablir les textes d’origine</button>
     </div>
-    <div class="suggestions" id="safilang-suggestions"></div>
+    <div class="suggestions" id="alliance-suggestions"></div>
   `;
   root.append(style, launcher, panel);
 
-  const languageSelect = panel.querySelector("#safilang-language");
+  const languageSelect = panel.querySelector("#alliance-language");
   const notice = panel.querySelector(".notice");
   const status = panel.querySelector(".status");
-  const generateButton = panel.querySelector("#safilang-generate");
-  const restoreButton = panel.querySelector("#safilang-restore");
-  const suggestionsContainer = panel.querySelector("#safilang-suggestions");
+  const generateButton = panel.querySelector("#alliance-generate");
+  const restoreButton = panel.querySelector("#alliance-restore");
+  const suggestionsContainer = panel.querySelector("#alliance-suggestions");
   let currentLanguage = "fr";
   let basaaAiMode = false;
   let generating = false;
@@ -274,7 +274,7 @@
         reject(new Error("Rechargez l’extension pour activer la connexion à Ollama."));
         return;
       }
-      chrome.runtime.sendMessage({ type: "safilang:translate-bassa", texts }, (response) => {
+      chrome.runtime.sendMessage({ type: "alliance:translate-bassa", texts }, (response) => {
         if (chrome.runtime.lastError) {
           reject(new Error(chrome.runtime.lastError.message));
           return;

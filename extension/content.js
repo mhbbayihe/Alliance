@@ -1,8 +1,8 @@
-// SafiLang : remplace les textes de la page par leurs équivalents (fichiers locales/*.json).
+// Alliance : remplace les textes de la page par leurs équivalents (fichiers locales/*.json).
 // La page n'est pas modifiée à la source : on ne touche qu'aux nœuds texte reconnus et à
 // quelques attributs de libellé. Les valeurs (montants, noms, numéros, champs) ne sont jamais écrites.
 (async () => {
-  const STORAGE_KEY = "safilang.langue";
+  const STORAGE_KEY = "alliance.langue";
   const ORIGINAL = "original";
   const SKIP = "script, style, noscript, textarea, pre, code, [contenteditable=''], [contenteditable='true']";
 
@@ -20,7 +20,7 @@
       tables[language.code] = await loadJson(`locales/${language.fichier}`);
     }));
   } catch (error) {
-    console.error("SafiLang : fichiers de traduction introuvables ou invalides.", error);
+    console.error("Alliance : fichiers de traduction introuvables ou invalides.", error);
     return;
   }
 
@@ -30,11 +30,11 @@
     try {
       audioTables[language.code] = await loadJson(language.audio);
     } catch (error) {
-      console.warn(`SafiLang : pas d'audio pour ${language.nom}.`, error);
+      console.warn(`Alliance : pas d'audio pour ${language.nom}.`, error);
     }
   }));
 
-  const engine = globalThis.SafiLangEngine.create(index, tables);
+  const engine = globalThis.AllianceEngine.create(index, tables);
   const attributes = index.attributsTraduits || [];
   const textState = new WeakMap();   // nœud texte -> { source, rendered }
   const attrState = new WeakMap();   // élément -> Map(attribut -> { source, rendered })
@@ -43,7 +43,7 @@
 
   // ---------- interface ----------
   const host = document.createElement("div");
-  host.id = "safilang-host";
+  host.id = "alliance-host";
   host.style.position = "fixed";
   host.style.zIndex = "2147483647";
   document.documentElement.append(host);
@@ -104,16 +104,16 @@
   launcher.className = "launcher";
   launcher.type = "button";
   launcher.setAttribute("aria-expanded", "false");
-  launcher.setAttribute("aria-controls", "safilang-panel");
+  launcher.setAttribute("aria-controls", "alliance-panel");
 
   const panel = document.createElement("section");
   panel.className = "panel";
-  panel.id = "safilang-panel";
-  panel.setAttribute("aria-labelledby", "safilang-title");
+  panel.id = "alliance-panel";
+  panel.setAttribute("aria-labelledby", "alliance-title");
   panel.hidden = true;
 
   const title = document.createElement("h2");
-  title.id = "safilang-title";
+  title.id = "alliance-title";
   title.textContent = "Langue de la page";
   const list = document.createElement("div");
   list.className = "languages";
@@ -313,7 +313,7 @@
         const response = await fetch(url);
         if (!response.ok) throw new Error(`${url} : ${response.status}`);
         const buffer = await audioContext.decodeAudioData(await response.arrayBuffer());
-        const signal = globalThis.SafiLangSignal;
+        const signal = globalThis.AllianceSignal;
         return { buffer, reglage: signal.analyze(signal.mono(buffer), buffer.sampleRate) };
       })());
       sounds.get(url).catch(() => sounds.delete(url));
@@ -390,7 +390,7 @@
         speaker.title = "Écoute impossible : rechargez la page.";
         speaker.setAttribute("aria-label", speaker.title);
       }
-      console.warn("SafiLang : lecture audio impossible.", error);
+      console.warn("Alliance : lecture audio impossible.", error);
     }
   }
 
@@ -472,7 +472,7 @@
         await new Promise((resolve) => setTimeout(resolve, 350));   // respiration entre deux phrases
       }
     } catch (error) {
-      console.warn("SafiLang : lecture de la page interrompue.", error);
+      console.warn("Alliance : lecture de la page interrompue.", error);
     } finally {
       if (id === readId) {
         reading = false;

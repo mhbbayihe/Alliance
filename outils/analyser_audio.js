@@ -18,7 +18,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 (async () => {
   const child = spawn(browser, [
-    "--headless=new", `--user-data-dir=${fs.mkdtempSync(path.join(os.tmpdir(), "safilang-audio-"))}`,
+    "--headless=new", `--user-data-dir=${fs.mkdtempSync(path.join(os.tmpdir(), "alliance-audio-"))}`,
     `--load-extension=${ext}`, `--disable-extensions-except=${ext}`, `--remote-debugging-port=${PORT}`,
     "--no-first-run", "--no-default-browser-check", "--autoplay-policy=no-user-gesture-required", "about:blank",
   ], { stdio: "ignore" });
@@ -68,7 +68,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
           try {
             const data = await (await fetch(chrome.runtime.getURL("audio/" + name.split("/").map(encodeURIComponent).join("/")))).arrayBuffer();
             const buffer = await audio.decodeAudioData(data);
-            out.push({ name, ...SafiLangSignal.analyze(SafiLangSignal.mono(buffer), buffer.sampleRate) });
+            out.push({ name, ...AllianceSignal.analyze(AllianceSignal.mono(buffer), buffer.sampleRate) });
           } catch (error) { out.push({ name, error: String(error) }); }
         }
         return out;

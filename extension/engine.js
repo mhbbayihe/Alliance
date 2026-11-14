@@ -1,4 +1,4 @@
-// Moteur de correspondance SafiLang : texte source -> clé -> texte dans la langue choisie.
+// Moteur de correspondance Alliance : texte source -> clé -> texte dans la langue choisie.
 // Aucun accès au DOM ni au réseau ici, pour pouvoir le tester hors navigateur.
 (() => {
   function normalize(text) {
@@ -79,5 +79,5 @@
     return { translate, size: exact.size + templates.length };
   }
 
-  globalThis.SafiLangEngine = { create, normalize };
+  globalThis.AllianceEngine = { create, normalize };
 })();

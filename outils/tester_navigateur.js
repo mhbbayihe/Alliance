@@ -7,7 +7,7 @@ const os = require("os");
 const path = require("path");
 
 const browser = process.argv[2];
-const profile = process.argv[3] || fs.mkdtempSync(path.join(os.tmpdir(), "safilang-profil-"));
+const profile = process.argv[3] || fs.mkdtempSync(path.join(os.tmpdir(), "alliance-profil-"));
 const shot = process.argv[4];
 const ext = path.join(__dirname, "..", "extension");
 const read = (name) => JSON.parse(fs.readFileSync(path.join(ext, "locales", name), "utf8"));
@@ -59,7 +59,7 @@ const check = (label, ok, detail = "") => {
     // textContent (et non innerText) : sans les majuscules de mise en forme ; espaces insécables ramenées à des espaces.
     const page = () => run(`document.querySelector("#app").textContent.replace(/[\\u00A0\\u202F]/g, " ")`);
     const pick = async (name) => {
-      await run(`(() => { const b = [...document.querySelector("#safilang-host").shadowRoot.querySelectorAll(".language")]
+      await run(`(() => { const b = [...document.querySelector("#alliance-host").shadowRoot.querySelectorAll(".language")]
         .find((x) => x.firstChild.textContent === ${JSON.stringify(name)}); b.click(); })()`);
       await sleep(150);
     };
@@ -75,7 +75,7 @@ const check = (label, ok, detail = "") => {
     let ready = false;
     for (let i = 0; i < 40 && !ready; i += 1) {
       await sleep(500);
-      ready = await run(`Boolean(document.querySelector("#safilang-host")?.shadowRoot?.querySelector(".language")) && document.body.innerText.includes("FCFA")`).catch(() => false);
+      ready = await run(`Boolean(document.querySelector("#alliance-host")?.shadowRoot?.querySelector(".language")) && document.body.innerText.includes("FCFA")`).catch(() => false);
     }
     check("extension chargée sur la page", ready);
     if (!ready) throw new Error("l'extension n'est pas active dans ce navigateur");
@@ -106,7 +106,7 @@ const check = (label, ok, detail = "") => {
 
     // 2 bis. Écoute (enregistrements éton) : le bouton apparaît près d'un texte enregistré et la lecture démarre.
     const speakerState = (text) => run(`(async () => {
-      const s = document.querySelector("#safilang-host").shadowRoot.querySelector(".speaker");
+      const s = document.querySelector("#alliance-host").shadowRoot.querySelector(".speaker");
       const el = [...document.querySelectorAll("#app *")].find((x) => [...x.childNodes].some((n) => n.nodeType === 3 && n.nodeValue.replace(/[\\u00A0\\u202F]/g, " ").trim() === ${JSON.stringify(text)}));
       if (!el) return "texte introuvable";
       el.dispatchEvent(new PointerEvent("pointerover", { bubbles: true }));
@@ -116,7 +116,7 @@ const check = (label, ok, detail = "") => {
       await new Promise((r) => setTimeout(r, 800));
       const etat = s.dataset.etat; s.click(); return etat;
     })()`);
-    const speakerSetting = () => run(`document.querySelector("#safilang-host").shadowRoot.querySelector(".speaker").dataset.reglage || ""`);
+    const speakerSetting = () => run(`document.querySelector("#alliance-host").shadowRoot.querySelector(".speaker").dataset.reglage || ""`);
     await pick("Eton");
     const audioState = await speakerState(L.eton.availableBalance);
     check("audio éton : lecture d'un texte enregistré", audioState === "lecture", audioState);
@@ -126,7 +126,7 @@ const check = (label, ok, detail = "") => {
     const afterAudio = await page();
     check("audio : la page n'est pas modifiée par l'écoute", afterAudio.includes(L.eton.availableBalance) && afterAudio.includes("250 000 FCFA"));
     // 2 ter. Lecture de toute la page : plusieurs enregistrements s'enchaînent, le cadre suit, l'arrêt fonctionne.
-    const reader = (js) => run(`(() => { const r = document.querySelector("#safilang-host").shadowRoot; const b = r.querySelector(".read"); const m = r.querySelector(".marker"); ${js} })()`);
+    const reader = (js) => run(`(() => { const r = document.querySelector("#alliance-host").shadowRoot; const b = r.querySelector(".read"); const m = r.querySelector(".marker"); ${js} })()`);
     check("lecture de la page : bouton proposé en éton", (await reader(`return !b.hidden && b.textContent;`)) === "Lire toute la page");
     await reader(`b.click();`);
     let readCount = 0;

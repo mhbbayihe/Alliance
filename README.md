@@ -1,4 +1,4 @@
-# SafiLang
+# Alliance
 
 Extension de navigateur (Chrome et Edge) qui affiche et fait entendre un service financier numérique en langues nationales camerounaises, **sans modifier le service**. Prototype réalisé pour l'épreuve de présélection du SAFINUM Innovate Challenge.
 

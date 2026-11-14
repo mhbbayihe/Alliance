@@ -1,4 +1,4 @@
-// Analyse de signal SafiLang : mesure un enregistrement de voix pour le jouer avec le même rendu que
+// Analyse de signal Alliance : mesure un enregistrement de voix pour le jouer avec le même rendu que
 // les autres (silences de début et de fin écartés, même niveau sonore). Le fichier n'est pas modifié.
 // Aucun accès au DOM ni au réseau ici, pour pouvoir le tester hors navigateur.
 (() => {
@@ -86,5 +86,5 @@
     return mix;
   }
 
-  globalThis.SafiLangSignal = { analyze, mono, db, TARGET_RMS, PEAK_LIMIT };
+  globalThis.AllianceSignal = { analyze, mono, db, TARGET_RMS, PEAK_LIMIT };
 })();

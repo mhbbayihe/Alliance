@@ -1,4 +1,4 @@
-globalThis.SAFILANG_DICTIONARY_LEXICON = Object.freeze({
+globalThis.ALLIANCE_DICTIONARY_LEXICON = Object.freeze({
   source: {
     title: "Dictionnaire éton-français",
     authors: "Mark Van de Velde et Kisito Essele Essele",

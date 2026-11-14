@@ -1,4 +1,4 @@
-# SafiLang — description de la solution
+# Alliance — description de la solution
 
 **SAFINUM Innovate Challenge — épreuve de présélection**
 Équipe : [nom de l'équipe] — Représentant : [nom, téléphone, courriel]
@@ -9,7 +9,7 @@ Les applications bancaires, de paiement et de microfinance du Cameroun sont prop
 
 ## La solution
 
-SafiLang est une extension de navigateur (Chrome et Edge). Elle affiche un service financier existant dans une langue nationale, **sans modifier le service** : ni son code, ni ses serveurs, ni ses données.
+Alliance est une extension de navigateur (Chrome et Edge). Elle affiche un service financier existant dans une langue nationale, **sans modifier le service** : ni son code, ni ses serveurs, ni ses données.
 
 - **Lire** : chaque texte reconnu de l'interface (titres, boutons, instructions, messages d'erreur, alertes de sécurité) est remplacé par son équivalent dans la langue choisie. Le changement est immédiat et suit l'utilisateur d'écran en écran.
 - **Écouter** : en éton et en bàsàa, un bouton haut-parleur apparaît à côté du texte survolé et fait entendre la phrase enregistrée par un locuteur. Un bouton « Lire toute la page » enchaîne les enregistrements de l'écran, comme une lecture à voix haute. L'écoute s'adresse aux personnes qui ne lisent pas, y compris dans leur propre langue.
@@ -35,4 +35,4 @@ L'état exact de validation de chaque langue est donné dans le document « Lang
 
 ## Pourquoi cette approche
 
-Dans un service financier, une traduction fausse est plus dangereuse que pas de traduction. SafiLang fait donc le choix d'équivalences validées par des locuteurs plutôt que d'un modèle génératif : chaque phrase affichée ou entendue peut être relue, corrigée et signée par une personne compétente, et le même fichier d'équivalences peut être réutilisé pour un autre service ou une autre langue.
+Dans un service financier, une traduction fausse est plus dangereuse que pas de traduction. Alliance fait donc le choix d'équivalences validées par des locuteurs plutôt que d'un modèle génératif : chaque phrase affichée ou entendue peut être relue, corrigée et signée par une personne compétente, et le même fichier d'équivalences peut être réutilisé pour un autre service ou une autre langue.
