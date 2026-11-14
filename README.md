@@ -2,7 +2,7 @@
 
 Extension de navigateur (Chrome et Edge) qui affiche et fait entendre un service financier numérique en langues nationales camerounaises, **sans modifier le service**. Prototype réalisé pour l'épreuve de présélection du SAFINUM Innovate Challenge.
 
-- **Langues nationales** : éton et bàsàa, en texte et en voix (enregistrements de locuteurs).
+- **Langue nationale** : bàsàa, en texte et en voix (traductions et enregistrements d'un locuteur).
 - **Langues source** : français et anglais, avec lecture par la voix de synthèse de l'appareil.
 - **Principe** : chaque texte reconnu est remplacé par un équivalent préparé à l'avance ; rien n'est traduit automatiquement. Un texte inconnu est laissé tel quel.
 - **Valeurs protégées** : montants, frais, noms, numéros, références et codes d'erreur ne sont jamais réécrits.
@@ -14,7 +14,7 @@ Extension de navigateur (Chrome et Edge) qui affiche et fait entendre un service
 2. Ouvrir `chrome://extensions` ou `edge://extensions` et activer le mode développeur.
 3. Cliquer sur « Charger l'extension non empaquetée » et choisir le dossier `extension`.
 4. Ouvrir <https://safinum.cm/hackathon-test>.
-5. Cliquer sur « Langue » en bas à gauche, choisir Eton ou Bàsàa.
+5. Cliquer sur « Langue » en bas à gauche, choisir Bàsàa.
 6. Survoler un texte et cliquer sur le haut-parleur pour l'écouter, ou cliquer sur « Lire toute la page ».
 
 ## Contenu du dépôt
@@ -41,11 +41,10 @@ Le second test parcourt la page de test officielle dans un navigateur sans fenê
 
 ## État et limites
 
-L'état de validation de chaque langue et les limites connues sont décrits sans détour dans [livrables/3-langues-et-validation.md](livrables/3-langues-et-validation.md) et [livrables/2-note-technique.md](livrables/2-note-technique.md). En résumé : une partie des textes éton n'est pas encore validée par un locuteur, et un message inédit n'est pas traduit.
+L'état de validation et les limites connues sont décrits sans détour dans [livrables/3-langues-et-validation.md](livrables/3-langues-et-validation.md) et [livrables/2-note-technique.md](livrables/2-note-technique.md). En résumé : le bàsàa vient d'un locuteur mais n'a pas eu de seconde relecture, deux enregistrements ne sont pas encore joués, et un message inédit n'est pas traduit.
 
 ## Sources et composants tiers
 
-- *Dictionnaire éton-français*, Mark Van de Velde et Kisito Essele Essele, Éditions CLÉ, 2022, licence CC BY-NC-SA 4.0. Un index tiré de cet ouvrage figure dans `extension/dictionary-index.json`, sous la même licence.
 - *Dictionnaire français-basaa*, Dr Pierre Emmanuel Njock, 2005 : consulté pendant le prototypage, non reproduit dans ce dépôt.
 - Claude (Anthropic) : assistance à l'écriture du code et de la documentation.
-- Les enregistrements audio sont les voix de locuteurs éton et bàsàa ; ils ne peuvent pas être réutilisés sans leur accord.
+- Les enregistrements audio sont la voix d'un locuteur bàsàa ; ils ne peuvent pas être réutilisés sans son accord.

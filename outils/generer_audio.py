@@ -17,7 +17,6 @@ AUDIO = os.path.join(RACINE, "extension", "audio")
 FORMATS = (".aac", ".ogg", ".mp3", ".m4a", ".opus", ".wav")
 
 LANGUES = {
-    "eton": "Enregistrements éton du locuteur",
     "basaa": "Enregistrements bàsàa du locuteur",
 }
 

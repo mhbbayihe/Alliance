@@ -52,52 +52,94 @@
   const style = document.createElement("style");
   style.textContent = `
     :host { all: initial; }
-    .launcher {
-      position: fixed; left: 20px; bottom: 20px; border: 0; border-radius: 999px;
-      padding: 12px 16px; background: #123b32; color: #fff; font: 600 14px/1.2 system-ui, sans-serif;
-      box-shadow: 0 4px 18px #0003; cursor: pointer;
+    /* Identité : les trois couleurs et l'étoile du drapeau camerounais, sur un fond ébène ; une frise de
+       losanges, forme courante de la vannerie et du tissage du pays ; un cadre de lecture en pointillé
+       comme un point de broderie. Aucun motif propre à un peuple n'est repris. */
+    * { box-sizing: border-box; }
+    .star {
+      display: inline-block; flex: none; width: 15px; height: 15px; background: #fcd116;
+      clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     }
-    button:focus-visible { outline: 3px solid #edc567; outline-offset: 3px; }
+    .launcher {
+      position: fixed; left: 20px; bottom: 20px; display: flex; align-items: center; gap: 9px;
+      border: 0; border-radius: 10px; padding: 11px 15px 11px 20px; overflow: hidden;
+      background: #1c1410; color: #fff; font: 700 14px/1.2 system-ui, sans-serif;
+      box-shadow: 0 4px 18px #0005; cursor: pointer;
+    }
+    /* ruban tricolore sur le bord gauche */
+    .launcher::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 9px;
+      background: linear-gradient(90deg, #007a5e 0 3px, #ce1126 3px 6px, #fcd116 6px 9px);
+    }
+    button:focus-visible { outline: 3px solid #fcd116; outline-offset: 3px; box-shadow: 0 0 0 3px #1c1410; }
     .panel {
-      position: fixed; left: 20px; bottom: 76px; width: min(320px, calc(100vw - 40px));
-      max-height: min(76vh, 620px); overflow: auto; box-sizing: border-box;
-      border: 1px solid #d5dfda; border-radius: 14px; padding: 16px;
-      background: #fff; color: #16231f; box-shadow: 0 8px 32px #0003;
+      position: fixed; left: 20px; bottom: 74px; width: min(320px, calc(100vw - 40px));
+      max-height: min(76vh, 620px); overflow: auto;
+      border: 2px solid #1c1410; border-radius: 12px; padding: 0 0 14px;
+      background: #fffdf5; color: #1c1410; box-shadow: 0 10px 34px #0006;
       font: 14px/1.5 system-ui, sans-serif;
     }
     .panel[hidden] { display: none; }
-    h2 { margin: 0 0 10px; font-size: 16px; }
-    .languages { display: grid; gap: 6px; }
+    .head {
+      display: flex; align-items: center; gap: 9px; padding: 15px 16px 13px;
+      background: linear-gradient(90deg, #007a5e 0 33.34%, #ce1126 33.34% 66.67%, #fcd116 66.67%) top / 100% 5px no-repeat, #1c1410;
+      color: #fff;
+    }
+    h2 { margin: 0; font: 700 16px/1.25 system-ui, sans-serif; letter-spacing: .01em; }
+    /* frise de losanges jaunes à cœur rouge */
+    .frieze {
+      height: 14px; background-color: #1c1410; background-size: 14px 14px;
+      background-image:
+        linear-gradient(45deg, #1c1410 25%, transparent 25% 75%, #1c1410 75%),
+        linear-gradient(-45deg, #1c1410 25%, transparent 25% 75%, #1c1410 75%),
+        radial-gradient(circle at 50% 50%, #ce1126 0 2.2px, #fcd116 2.4px);
+      border-bottom: 2px solid #1c1410;
+    }
+    .languages { display: grid; gap: 7px; padding: 14px 14px 0; }
     .language {
       display: flex; align-items: baseline; justify-content: space-between; gap: 10px; width: 100%;
-      border: 1px solid #77877f; border-radius: 8px; padding: 9px 11px; background: #fff; color: #16231f;
-      font: 600 14px/1.3 system-ui, sans-serif; text-align: left; cursor: pointer;
+      border: 2px solid #1c1410; border-left-width: 8px; border-radius: 8px; padding: 9px 11px;
+      background: #fff; color: #1c1410; font: 600 15px/1.3 system-ui, sans-serif; text-align: left; cursor: pointer;
     }
-    .language[aria-pressed="true"] { border-color: #123b32; background: #123b32; color: #fff; }
-    .language small { font-weight: 400; font-size: 11px; opacity: .8; text-align: right; }
-    .status[hidden] { display: none; }
-    .status { margin: 12px 0 0; color: #33453d; font-size: 13px; }
-    .speaker {
-      position: fixed; width: 32px; height: 32px; box-sizing: border-box; padding: 6px;
-      border: 2px solid #fff; border-radius: 50%; background: #123b32; color: #fff;
-      box-shadow: 0 2px 10px #0004; cursor: pointer;
-    }
-    .speaker[hidden] { display: none; }
-    .speaker[data-etat="lecture"] { background: #edc567; color: #16231f; }
-    .speaker[data-etat="erreur"] { background: #a12a2a; }
-    .speaker svg { display: block; width: 100%; height: 100%; }
+    .language:hover { background: #fff3c2; }
+    .language[aria-pressed="true"] { border-color: #007a5e; border-left-color: #fcd116; background: #007a5e; color: #fff; }
+    .language small { font-weight: 400; font-size: 11px; opacity: .85; text-align: right; }
     .read {
-      width: 100%; margin-top: 10px; border: 0; border-radius: 8px; padding: 10px 11px;
-      background: #edc567; color: #16231f; font: 600 14px/1.3 system-ui, sans-serif; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+      width: calc(100% - 28px); margin: 12px 14px 0; border: 2px solid #1c1410; border-radius: 8px; padding: 11px;
+      background: #fcd116; color: #1c1410; font: 700 15px/1.3 system-ui, sans-serif; cursor: pointer;
+      box-shadow: 0 3px 0 #1c1410;
     }
     .read[hidden] { display: none; }
-    .read[data-etat="lecture"] { background: #123b32; color: #fff; }
+    .read:active { transform: translateY(2px); box-shadow: 0 1px 0 #1c1410; }
+    .read[data-etat="lecture"] { background: #ce1126; color: #fff; }
+    .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 9px 14px 0; }
+    .tools[hidden] { display: none; }
+    .tool {
+      border: 2px solid #1c1410; border-radius: 8px; padding: 9px 6px; background: #fff; color: #1c1410;
+      font: 600 13px/1.25 system-ui, sans-serif; cursor: pointer;
+    }
+    .tool:hover:not(:disabled) { background: #fff3c2; }
+    .tool:disabled { border-color: #a39a94; color: #857b74; cursor: default; }
+    .tool[aria-pressed="true"] { border-color: #007a5e; background: #007a5e; color: #fff; }
+    .status[hidden] { display: none; }
+    .status { margin: 12px 14px 0; color: #4a3f38; font-size: 13px; }
+    .speaker {
+      position: fixed; width: 34px; height: 34px; padding: 6px;
+      border: 2px solid #1c1410; border-radius: 50%; background: #fcd116; color: #1c1410;
+      box-shadow: 0 2px 0 #1c1410, 0 4px 12px #0004; cursor: pointer;
+    }
+    .speaker[hidden] { display: none; }
+    .speaker[data-etat="lecture"] { background: #007a5e; color: #fff; }
+    .speaker[data-etat="erreur"] { background: #ce1126; color: #fff; }
+    .speaker svg { display: block; width: 100%; height: 100%; }
     .marker {
-      position: fixed; box-sizing: border-box; border: 3px solid #edc567; border-radius: 8px;
-      box-shadow: 0 0 0 2px #123b32; pointer-events: none;
+      position: fixed; border: 3px dashed #ce1126; border-radius: 8px;
+      box-shadow: 0 0 0 3px #fcd116, 0 0 0 5px #1c1410; pointer-events: none;
     }
     .marker[hidden] { display: none; }
     @media (max-width: 480px) { .launcher { left: 12px; bottom: 12px; } .panel { left: 12px; bottom: 64px; } }
+    @media (prefers-reduced-motion: reduce) { .read:active { transform: none; } }
   `;
 
   const launcher = document.createElement("button");
@@ -105,6 +147,9 @@
   launcher.type = "button";
   launcher.setAttribute("aria-expanded", "false");
   launcher.setAttribute("aria-controls", "alliance-panel");
+  const star = () => { const mark = document.createElement("span"); mark.className = "star"; mark.setAttribute("aria-hidden", "true"); return mark; };
+  const launcherLabel = document.createElement("span");
+  launcher.append(star(), launcherLabel);
 
   const panel = document.createElement("section");
   panel.className = "panel";
@@ -112,9 +157,15 @@
   panel.setAttribute("aria-labelledby", "alliance-title");
   panel.hidden = true;
 
+  const head = document.createElement("div");
+  head.className = "head";
   const title = document.createElement("h2");
   title.id = "alliance-title";
-  title.textContent = "Langue de la page";
+  title.textContent = "Choisir la langue";
+  head.append(star(), title);
+  const frieze = document.createElement("div");
+  frieze.className = "frieze";
+  frieze.setAttribute("aria-hidden", "true");
   const list = document.createElement("div");
   list.className = "languages";
   const status = document.createElement("p");
@@ -129,7 +180,20 @@
   const marker = document.createElement("div");
   marker.className = "marker";
   marker.hidden = true;
-  panel.append(title, list, readButton, status);
+  // Sous le bouton de lecture : réécouter le dernier texte, et ralentir la voix.
+  const tools = document.createElement("div");
+  tools.className = "tools";
+  tools.hidden = true;
+  const repeatButton = document.createElement("button");
+  repeatButton.className = "tool";
+  repeatButton.type = "button";
+  repeatButton.textContent = "Répéter";
+  repeatButton.disabled = true;
+  const speedButton = document.createElement("button");
+  speedButton.className = "tool";
+  speedButton.type = "button";
+  tools.append(repeatButton, speedButton);
+  panel.append(head, frieze, list, readButton, tools, status);
   // Bouton d'écoute : il flotte à côté du texte survolé ou sélectionné au clavier, hors du DOM de la page.
   const speaker = document.createElement("button");
   speaker.className = "speaker";
@@ -230,7 +294,7 @@
 
   // Voix de synthèse : pour une langue qui en déclare une (« voix » dans index.json : français, anglais),
   // le texte est lu par une voix installée sur l'appareil. Les voix en ligne sont écartées, pour que
-  // rien de ce qui est affiché ne quitte le navigateur. Aucune voix n'existe pour l'éton ni le bàsàa.
+  // rien de ce qui est affiché ne quitte le navigateur. Aucune voix de synthèse n'existe pour le bàsàa.
   const voiceCache = new Map();
   function voiceFor(code) {
     const language = index.langues.find((item) => item.code === code);
@@ -339,7 +403,7 @@
     const utterance = new SpeechSynthesisUtterance(text.replace(/\bFCFA\b/g, french ? "francs CFA" : "CFA francs"));
     utterance.voice = voice;
     utterance.lang = voice.lang;
-    utterance.rate = 0.95;
+    utterance.rate = 0.95 * speed();
     return new Promise((resolve, reject) => {
       utterance.onend = () => resolve(token === playToken);
       utterance.onerror = (event) => (event.error === "canceled" || event.error === "interrupted" ? resolve(false) : reject(new Error(event.error)));
@@ -349,6 +413,8 @@
 
   // Joue un enregistrement. La promesse rend true s'il est allé au bout, false s'il a été interrompu.
   async function playSound(url, token) {
+    lastSound = url;
+    repeatButton.disabled = false;
     if (url.startsWith("voix:")) return speak(url.slice(5), token);
     audioContext = audioContext || new AudioContext();
     await audioContext.resume();
@@ -359,11 +425,14 @@
     const level = audioContext.createGain();
     const now = audioContext.currentTime;
     const length = reglage.end - reglage.start;
+    // Lecture lente : l'enregistrement est ralenti, ce qui rend aussi la voix un peu plus grave.
+    source.playbackRate.value = speed();
+    const heard = length / speed();   // durée réellement entendue
     // Montée et descente de 10 ms pour éviter un clic aux points de coupe.
     level.gain.setValueAtTime(0, now);
     level.gain.linearRampToValueAtTime(reglage.gain, now + 0.01);
-    level.gain.setValueAtTime(reglage.gain, now + Math.max(0.01, length - 0.01));
-    level.gain.linearRampToValueAtTime(0, now + length);
+    level.gain.setValueAtTime(reglage.gain, now + Math.max(0.01, heard - 0.01));
+    level.gain.linearRampToValueAtTime(0, now + heard);
     source.connect(level).connect(audioContext.destination);
     speaker.dataset.reglage = `${reglage.start.toFixed(2)}-${reglage.end.toFixed(2)} s, gain ${reglage.gain.toFixed(2)}`;
     return new Promise((resolve) => {
@@ -374,6 +443,18 @@
       playing = { source };
       source.start(now, reglage.start, length);
     });
+  }
+
+  // ---------- vitesse et répétition ----------
+  const SPEED_KEY = "alliance.lent";
+  const SLOW = 0.85;
+  let slow = false;
+  let lastSound = null;
+  const speed = () => (slow ? SLOW : 1);
+  function showSpeed() {
+    speedButton.textContent = slow ? "Voix lente" : "Voix normale";
+    speedButton.setAttribute("aria-pressed", String(slow));
+    speedButton.title = slow ? "Revenir à la vitesse normale" : "Ralentir la voix";
   }
 
   async function playAudio(url) {
@@ -517,24 +598,71 @@
     else playAudio(speakerUrl);
   });
   readButton.addEventListener("click", () => { if (reading) stopReading(); else readPage(); });
+  repeatButton.addEventListener("click", () => { if (lastSound) playAudio(lastSound); });
+  speedButton.addEventListener("click", () => {
+    slow = !slow;
+    showSpeed();
+    try { chrome.storage.local.set({ [SPEED_KEY]: slow }); } catch { /* préférence non enregistrée */ }
+  });
+
+  // ---------- écoute au toucher : un appui long sur un texte le lit ----------
+  // Sur un écran tactile il n'y a pas de survol. Un appui maintenu une demi-seconde lit le texte, et le
+  // clic qui suivrait au relâchement est annulé, pour ne pas activer le bouton qu'on voulait écouter.
+  const LONG_PRESS = 500;
+  let pressTimer = 0;
+  let pressStart = null;
+  let swallowClick = false;
+  function cancelPress() {
+    clearTimeout(pressTimer);
+    pressStart = null;
+  }
+  document.addEventListener("pointerdown", (event) => {
+    cancelPress();
+    swallowClick = false;
+    if (event.button !== 0 || event.target === host) return;
+    const found = findAudio(event.target);
+    if (!found) return;
+    pressStart = { x: event.clientX, y: event.clientY };
+    pressTimer = setTimeout(() => {
+      pressStart = null;
+      swallowClick = true;
+      host.dataset.appuiLong = found.url.startsWith("voix:") ? "voix" : "enregistrement";
+      showSpeaker(found);
+      playAudio(found.url);
+      try { navigator.vibrate(30); } catch { /* pas de vibreur */ }
+    }, LONG_PRESS);
+  }, true);
+  document.addEventListener("pointermove", (event) => {
+    if (pressStart && Math.hypot(event.clientX - pressStart.x, event.clientY - pressStart.y) > 10) cancelPress();
+  }, true);
+  for (const type of ["pointerup", "pointercancel"]) document.addEventListener(type, cancelPress, true);
+  document.addEventListener("click", (event) => {
+    if (!swallowClick || event.target === host) return;
+    swallowClick = false;
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
+  document.addEventListener("contextmenu", (event) => { if (swallowClick) event.preventDefault(); }, true);
   document.addEventListener("pointerover", (event) => pointAt(event.target), true);
   document.addEventListener("focusin", (event) => pointAt(event.target), true);
-  window.addEventListener("scroll", hideSpeaker, true);
+  window.addEventListener("scroll", () => { cancelPress(); hideSpeaker(); }, true);
   window.addEventListener("resize", hideSpeaker);
   // Les voix de l'appareil arrivent parfois après le chargement de la page.
   if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", () => { voiceCache.clear(); updatePanel(); });
 
   function updatePanel() {
     const choice = choices.find((item) => item.code === currentLanguage) || choices[0];
-    launcher.textContent = `Langue : ${choice.nom}`;
+    launcherLabel.textContent = `Langue : ${choice.nom}`;
     for (const [code, button] of buttons) button.setAttribute("aria-pressed", String(code === currentLanguage));
     speaker.setAttribute("aria-label", `Écouter en ${choice.nom}`);
     speaker.title = `Écouter en ${choice.nom}`;
     // Le panneau ne garde que les indications utiles à l'utilisateur : comment écouter, et l'état d'une langue à confirmer.
     readButton.hidden = !hasSound();
+    tools.hidden = !hasSound();
+    showSpeed();
     showReadState();
     status.textContent = currentLanguage === ORIGINAL ? "" : [
-      hasSound() ? "Pour écouter un seul texte : survolez-le puis appuyez sur le haut-parleur." : "",
+      hasSound() ? "Pour écouter un seul texte : survolez-le puis appuyez sur le haut-parleur, ou gardez le doigt appuyé dessus." : "",
       choice.etiquette && choice.statut ? choice.statut : "",
     ].filter(Boolean).join(" ");
     status.hidden = !status.textContent;
@@ -542,6 +670,8 @@
 
   function setLanguage(code, remember) {
     stopReading();
+    lastSound = null;
+    repeatButton.disabled = true;
     currentLanguage = choices.some((choice) => choice.code === code) ? code : ORIGINAL;
     hideSpeaker();
     withoutEcho(() => processTree(document.body, false));
@@ -595,6 +725,9 @@
   let stored = ORIGINAL;
   try {
     stored = (await chrome.storage.local.get(STORAGE_KEY))[STORAGE_KEY] || ORIGINAL;
+  } catch { /* première utilisation */ }
+  try {
+    slow = Boolean((await chrome.storage.local.get(SPEED_KEY))[SPEED_KEY]);
   } catch { /* première utilisation */ }
   setLanguage(stored, false);
 })();

@@ -19,11 +19,9 @@ Après une modification des fichiers, cliquer sur « Recharger » dans la page d
 | Français | `locales/fr.json` | textes exacts de la page |
 | English | `locales/en.json` | textes exacts de la page |
 | Bàsàa | `locales/basaa.json` | traductions du locuteur (`bassa.txt`, 14 novembre 2026) |
-| Eton | `locales/eton.json` | 51 clés du document de travail du locuteur, 31 composées depuis le dictionnaire, non validées |
 
 Le bàsàa reprend les 72 traductions du locuteur, lues dans `bassa.txt` à la racine du projet. Seules retouches : le nom « Safinum Pay » rétabli (écrit « Safinum pay »), et, dans la description des frais, les chiffres recopiés depuis la page (le locuteur avait écrit « 15% » pour « 1,5 % »).
 
-L'éton reprend le document de travail fourni le 13 novembre 2026. Quand il laisse un mot en français, ce mot est gardé. Les 31 textes qu'il ne couvre pas ont été composés à partir de l'index du dictionnaire éton-français : ce sont des suites de mots non validées, à faire relire. `locales/eton-provenance.json` indique l'origine de chaque clé.
 
 ## Comment ça marche
 
@@ -37,15 +35,17 @@ L'éton reprend le document de travail fourni le 13 novembre 2026. Quand il lais
 
 Une valeur écrite `{nom}` dans un fichier de langue marque une variable, par exemple `"Bonjour, {prenom}"` ou `"Frais de {taux} % (min. {min} FCFA, max. {max} FCFA)"`. Le texte autour est traduit ; la valeur est recopiée à l'identique. La forme autorisée de chaque variable est définie dans `locales/index.json`.
 
-### Écoute en éton et en bàsàa
+### Écoute en bàsàa
 
-Les enregistrements des locuteurs sont dans `audio/eton/` et `audio/basaa/`, nommés « numéro - phrase française » ; les numéros sont ceux des 72 phrases de `liste-traduction-basaa.txt`, la même liste servant aux deux langues. Un fichier déposé sous le seul nom « numéro.ext » est renommé par le script. `audio/eton.json` et `audio/basaa.json` associent chaque clé de l'interface à son fichier ; il est produit par `python outils/generer_audio.py`, à relancer après tout ajout ou renommage d'enregistrement. Quand plusieurs prises existent, celle dont le nom ne porte pas « (prise N) » est jouée.
+Les enregistrements du locuteur sont dans `audio/basaa/`, nommés « numéro - phrase française » ; les numéros sont ceux des 72 phrases de `liste-traduction-basaa.txt`. Un fichier déposé sous le seul nom « numéro.ext » est renommé par le script. `audio/basaa.json` associe chaque clé de l'interface à son fichier ; il est produit par `python outils/generer_audio.py`, à relancer après tout ajout ou renommage d'enregistrement. Quand plusieurs prises existent, celle dont le nom ne porte pas « (prise N) » est jouée. Deux enregistrements sont écartés de la lecture dans ce script (`A_VERIFIER`) : « Bonjour, Amina », reçu sans son, et la description des frais, à vérifier à l'écoute.
 
-En éton et en bàsàa, un bouton haut-parleur apparaît à côté du texte survolé ou atteint au clavier s'il a un enregistrement ; un appui lance l'écoute, un second l'arrête. Le bouton est dessiné hors du contenu de la page. Un enregistrement qui prononce une valeur (« Bonjour, Amina », le numéro de compte) n'est proposé que si la page affiche exactement cette valeur.
+En bàsàa, un bouton haut-parleur apparaît à côté du texte survolé ou atteint au clavier s'il a un enregistrement ; un appui lance l'écoute, un second l'arrête. Le bouton est dessiné hors du contenu de la page. Un enregistrement qui prononce une valeur (le numéro de compte) n'est proposé que si la page affiche exactement cette valeur.
 
 Le panneau propose aussi « Lire toute la page » : les enregistrements des textes de l'écran s'enchaînent dans l'ordre de la page, un cadre suit le texte en cours de lecture, et la page défile si besoin. Un second appui ou la touche Échap arrête la lecture. Les valeurs (montants, noms, numéros) n'ont pas d'enregistrement et ne sont pas lues. Le bouton n'apparaît que pour une langue qui a des enregistrements.
 
 En français et en anglais, l'écoute et « Lire toute la page » passent par une voix de synthèse installée sur l'appareil ; les valeurs (montants, noms, numéros) sont alors lues aussi. Les voix en ligne du navigateur sont écartées, pour qu'aucun texte affiché ne soit envoyé à un serveur. Si l'appareil n'a pas de voix installée pour la langue, l'écoute n'est pas proposée (sous Windows : Paramètres > Heure et langue > Voix > Ajouter des voix).
+
+Sur un écran tactile, où le survol n'existe pas, un appui maintenu une demi-seconde sur un texte le lit ; le clic qui suivrait au relâchement est annulé, pour ne pas activer le bouton qu'on voulait seulement écouter. Sous « Lire toute la page », « Répéter » rejoue le dernier texte entendu et « Voix normale / Voix lente » ralentit la lecture (enregistrements à 85 % de leur vitesse, ce qui rend la voix un peu plus grave). La vitesse choisie est mémorisée.
 
 Pour que la voix ait le même rendu d'un texte à l'autre, `signal.js` mesure chaque enregistrement au moment de l'écoute : il repère où la voix commence et finit, écarte les silences de début et de fin, et règle le gain pour ramener la voix à −20 dBFS sans dépasser −1 dBFS en crête (gain plafonné à +18 dB). Les fichiers ne sont pas modifiés ; les pauses à l'intérieur d'un enregistrement, le bruit de fond et la saturation à l'enregistrement ne sont pas corrigés. `node outils/analyser_audio.js "<chemin du navigateur>"` affiche les mesures et les réglages de tous les fichiers.
 
@@ -72,9 +72,8 @@ Les fichiers actuels sont produits par `outils/generer_locales.py` ; relancer ce
 
 ## Ancienne version
 
-`archive/content-v0.2-ia.js` est le script précédent (phrases éton approuvées et aperçu bàsàa par Ollama). Il n'est plus chargé. `service-worker.js`, `dataset.js`, `dictionary-lexicon.js` et `dictionary-index.json` sont conservés mais ne servent plus à l'affichage ; l'autorisation `http://127.0.0.1:11434/*` du manifeste ne sert qu'à cet ancien mode.
+`service-worker.js` et l'autorisation `http://127.0.0.1:11434/*` du manifeste viennent d'un essai antérieur de traduction automatique locale (Ollama). Ils ne servent plus à l'affichage.
 
 ## Sources linguistiques
 
-- *Dictionnaire éton-français*, Mark Van de Velde et Kisito Essele Essele, Éditions CLÉ, 2022, licence CC BY-NC-SA 4.0 (attribution, usage non commercial, partage à l'identique).
 - *Dictionnaire français-basaa*, Dr Pierre Emmanuel Njock, 2005, licence non indiquée.

@@ -11,7 +11,7 @@ const profile = process.argv[3] || fs.mkdtempSync(path.join(os.tmpdir(), "allian
 const shot = process.argv[4];
 const ext = path.join(__dirname, "..", "extension");
 const read = (name) => JSON.parse(fs.readFileSync(path.join(ext, "locales", name), "utf8"));
-const L = { fr: read("fr.json"), en: read("en.json"), basaa: read("basaa.json"), eton: read("eton.json") };
+const L = { fr: read("fr.json"), en: read("en.json"), basaa: read("basaa.json") };
 const PORT = 9337;
 const URL_TEST = "https://safinum.cm/hackathon-test";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -84,7 +84,7 @@ const check = (label, ok, detail = "") => {
     check("page d'origine en français", original.includes(L.fr.availableBalance));
 
     // 1. Changement de langue immédiat, dans toutes les langues, valeurs intactes.
-    for (const [name, code] of [["Bàsàa", "basaa"], ["Eton", "eton"], ["English", "en"], ["Français", "fr"]]) {
+    for (const [name, code] of [["Bàsàa", "basaa"], ["English", "en"], ["Français", "fr"]]) {
       await pick(name);
       const text = await page();
       const expected = [L[code].availableBalance, L[code].overviewSubtitle, L[code].hello.replace("{prenom}", "Amina"),
@@ -93,10 +93,6 @@ const check = (label, ok, detail = "") => {
       check(`${name} : textes remplacés`, missing.length === 0, JSON.stringify(missing));
       check(`${name} : valeurs intactes`, ["250 000 FCFA", "Amina Ngo Bell", "CM 001 2345 6789 01", "-12 500 FCFA", "05 nov. 2026"].every((v) => text.includes(v)));
     }
-    await pick("Eton");
-    const etonText = await page();
-    const noEquivalent = Object.keys(L.eton).filter((k) => L.eton[k] === null && !/\{/.test(L.fr[k]) && original.includes(L.fr[k]));
-    check(`Eton : ${noEquivalent.length} texte(s) sans équivalent laissés en français sur cet écran`, noEquivalent.every((k) => etonText.includes(L.fr[k])));
     await pick("Page d’origine");
     check("retour à la page d'origine identique", (await page()) === original);
 
@@ -104,7 +100,7 @@ const check = (label, ok, detail = "") => {
     await pick("Bàsàa");
     const B = L.basaa;
 
-    // 2 bis. Écoute (enregistrements éton) : le bouton apparaît près d'un texte enregistré et la lecture démarre.
+    // 2 bis. Écoute (enregistrements bàsàa) : le bouton apparaît près d'un texte enregistré et la lecture démarre.
     const speakerState = (text) => run(`(async () => {
       const s = document.querySelector("#alliance-host").shadowRoot.querySelector(".speaker");
       const el = [...document.querySelectorAll("#app *")].find((x) => [...x.childNodes].some((n) => n.nodeType === 3 && n.nodeValue.replace(/[\\u00A0\\u202F]/g, " ").trim() === ${JSON.stringify(text)}));
@@ -117,17 +113,16 @@ const check = (label, ok, detail = "") => {
       const etat = s.dataset.etat; s.click(); return etat;
     })()`);
     const speakerSetting = () => run(`document.querySelector("#alliance-host").shadowRoot.querySelector(".speaker").dataset.reglage || ""`);
-    await pick("Eton");
-    const audioState = await speakerState(L.eton.availableBalance);
-    check("audio éton : lecture d'un texte enregistré", audioState === "lecture", audioState);
+    const audioState = await speakerState(B.availableBalance);
+    check("audio bàsàa : lecture d'un texte enregistré (ogg)", audioState === "lecture", audioState);
     const setting = await speakerSetting();
-    check(`audio éton : silences coupés et niveau réglé (${setting})`, /^\d+\.\d+-\d+\.\d+ s, gain \d+\.\d+$/.test(setting) && !setting.startsWith("0.00-"), setting);
-    check("audio éton : pas de bouton pour un texte sans enregistrement", (await speakerState(L.eton.overviewTitle)) === "masqué");
+    check(`audio bàsàa : silences coupés et niveau réglé (${setting})`, /^\d+\.\d+-\d+\.\d+ s, gain \d+\.\d+$/.test(setting), setting);
+    check("audio bàsàa : pas de bouton pour un enregistrement écarté (fichier muet)", (await speakerState(B.hello.replace("{prenom}", "Amina"))) === "masqué");
     const afterAudio = await page();
-    check("audio : la page n'est pas modifiée par l'écoute", afterAudio.includes(L.eton.availableBalance) && afterAudio.includes("250 000 FCFA"));
+    check("audio : la page n'est pas modifiée par l'écoute", afterAudio.includes(B.availableBalance) && afterAudio.includes("250 000 FCFA"));
     // 2 ter. Lecture de toute la page : plusieurs enregistrements s'enchaînent, le cadre suit, l'arrêt fonctionne.
     const reader = (js) => run(`(() => { const r = document.querySelector("#alliance-host").shadowRoot; const b = r.querySelector(".read"); const m = r.querySelector(".marker"); ${js} })()`);
-    check("lecture de la page : bouton proposé en éton", (await reader(`return !b.hidden && b.textContent;`)) === "Lire toute la page");
+    check("lecture de la page : bouton proposé en bàsàa", (await reader(`return !b.hidden && b.textContent;`)) === "Lire toute la page");
     await reader(`b.click();`);
     let readCount = 0;
     for (let i = 0; i < 40 && readCount < 2; i += 1) { await sleep(500); readCount = Number(await reader(`return b.dataset.lus;`)); }
@@ -154,9 +149,19 @@ const check = (label, ok, detail = "") => {
       check(`${name} : la page n'est pas modifiée par la voix`, (await page()).includes("250 000 FCFA"));
     }
     await pick("Bàsàa");
-    check("bàsàa : lecture de page proposée", !(await reader(`return b.hidden;`)));
-    const basaaState = await speakerState(B.availableBalance);
-    check("bàsàa : lecture d'un texte enregistré (ogg)", basaaState === "lecture", basaaState);
+    // 2 quinquies. Appui long (écran tactile), vitesse de la voix, répétition.
+    const tool = (js) => run(`(async () => { const h = document.querySelector("#alliance-host"); const r = h.shadowRoot; const s = r.querySelector(".speaker");
+      const [repeat, speed] = r.querySelectorAll(".tool"); const wait = (ms) => new Promise((x) => setTimeout(x, ms));
+      const btn = [...document.querySelectorAll("#app button")].find((x) => x.textContent.trim() === ${JSON.stringify(B.startTransfer)}); ${js} })()`);
+    check("appui long : le texte du bouton est lu", (await tool(`btn.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true, button: 0, clientX: 50, clientY: 50 }));
+      await wait(900); const etat = s.dataset.etat + "|" + h.dataset.appuiLong; btn.dispatchEvent(new PointerEvent("pointerup", { bubbles: true })); return etat;`)) === "lecture|enregistrement");
+    await tool(`btn.click(); await wait(400);`);
+    check("appui long : le bouton n'est pas activé au relâchement", !(await page()).includes(B.feesSubtitle));
+    check("appui court : rien n'est lu", (await tool(`s.click(); await wait(100); btn.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true, button: 0 }));
+      await wait(150); btn.dispatchEvent(new PointerEvent("pointerup", { bubbles: true })); await wait(600); return s.dataset.etat;`)) === "");
+    check("vitesse : voix lente activée", (await tool(`speed.click(); return speed.textContent + "|" + speed.getAttribute("aria-pressed");`)) === "Voix lente|true");
+    check("répéter : le dernier texte est relu, en voix lente", (await tool(`repeat.click(); await wait(700); return repeat.disabled + "|" + s.dataset.etat;`)) === "false|lecture");
+    check("vitesse : retour à la voix normale", (await tool(`s.click(); speed.click(); return speed.textContent;`)) === "Voix normale");
     check("étape 2 ouverte", await clickButton(B.startTransfer) && (await page()).includes(B.feesSubtitle));
     await run(`(() => { const s = document.querySelector("#app select"); s.value = "mobile_money"; s.dispatchEvent(new Event("change", { bubbles: true })); })()`);
     await sleep(300);
@@ -207,13 +212,13 @@ const check = (label, ok, detail = "") => {
     check("page d'origine : anglais de la page, pas l'ancien français", text.includes(L.en.receiptTitle) && !text.includes(L.fr.receiptTitle));
 
     // 5. La langue choisie est mémorisée après rechargement.
-    await pick("Eton");
+    await pick("Bàsàa");
     await send("Page.navigate", { url: URL_TEST });
     for (let i = 0; i < 20; i += 1) {
       await sleep(500);
-      if (await run(`document.body.textContent.includes(${JSON.stringify(L.eton.availableBalance)})`).catch(() => false)) break;
+      if (await run(`document.body.textContent.includes(${JSON.stringify(B.availableBalance)})`).catch(() => false)) break;
     }
-    check("langue mémorisée après rechargement", (await page()).includes(L.eton.availableBalance));
+    check("langue mémorisée après rechargement", (await page()).includes(B.availableBalance));
 
     if (shot) {
       const png = await send("Page.captureScreenshot", { format: "png" });

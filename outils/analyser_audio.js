@@ -9,7 +9,7 @@ const path = require("path");
 
 const browser = process.argv[2];
 const ext = path.join(__dirname, "..", "extension");
-// Tous les enregistrements, par dossier de langue : « eton/03 - Bénéficiaire.aac ».
+// Tous les enregistrements, par dossier de langue : « basaa/03 - Bénéficiaire.ogg ».
 const only = process.argv[3];   // facultatif : une seule langue
 const files = fs.readdirSync(path.join(ext, "audio"), { withFileTypes: true }).filter((d) => d.isDirectory() && (!only || d.name === only))
   .flatMap((d) => fs.readdirSync(path.join(ext, "audio", d.name)).filter((name) => /\.(aac|ogg|mp3|m4a|opus|wav)$/i.test(name)).sort().map((name) => `${d.name}/${name}`));
